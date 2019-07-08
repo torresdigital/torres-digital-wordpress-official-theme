@@ -1,0 +1,806 @@
+/* Theme Name: 🌟Torres Digital®
+Theme URI: https://www.facebook.com/torresdigital/
+
+    Author: Torres Digital® | Sites → Lojas Virtuais e e-Commerce
+    Author URI: https://www.facebook.com/torresdigital/
+
+    Description: Somos uma Agência Gaúcha que trabalha com Desenvolvimento Web voltado para todos os Nichos do Mercado tais como os de insumos, commodities, pequenos, médios e grandes Lojistas que desejam alcançar mais Clientes através do e-Commerce: Sites, Aplicativos, Lojas Virtuais, Marketplaces, WordPress e Woocommerce, integrados com os Principais Cartões e Soluções de Pagamentos do Brasil e do Mundo; tais como Cielo, CyberSource, PagSeguro, Stripe, Vindi, MasterCard, Visa, American Express, outros.
+
+    Torres Digital também conta com toda uma Equipe e um Know-how forte, amplo, e moderno e conceitual para a organização e criação de todo um Portifólio para Publicidade e Propaganda.
+
+    www.torresdigital.tk * Menos é mais.
+
+    Text Domain: torresdigital
+    Template: shophistic-lite
+    Version: 2.2.0 *//*
+
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Tags: child theme, woocommerce.
+This theme, like WordPress, is licensed under the GPL. Use it to make something cool, have fun, and share what you’ve learned with others.  */
+
+/*All Begin*/
+
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700|Nunito:300,400,600,700,800,900|Open+Sans:300,400,600,700,800&display=swap');
+/*
+    font-family: 'Inconsolata', monospace;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;font-family: 'Inconsolata', monospace;font-weight: 400;color: #555;line-height: 140%;letter-spacing: 1px;
+*/
+
+/*Padrao*/
+body *:focus { outline-offset: none;  outline: none } body { background-color: #fff; } *, ::after, ::before {-webkit-box-sizing: border-box;box-sizing: border-box;-ms-word-wrap: break-word;word-wrap: break-word;} h1, h2, h3, h4, h5, h6 {font-family: 'Inconsolata', monospace; color: #000} html .comment-form-cookies-consent {width: auto;display: inline-flex;} h1 {font-size: 34px; } h2 {font-size: 31px; margin-bottom: 22px} h3 {font-size: 22px; margin-bottom: 22px} h4, h5 {font-size: 18px} p, a, span, body { font-size: 14px; font-family: 'Inconsolata', monospace; font-weight: 400; color: #555; letter-spacing: 1px;} p {  line-height: 140% } input, textarea {  border: 2px solid #f4f4f4; } blockquote p {color: #A08240;} #contato {width: 95%} .titulo {margin: 30px auto; border-bottom: 2px solid #f4f4f4; } #content.col-md-12 {padding: 0} html .comment-form-cookies-consent input[type="checkbox"] {height: auto; margin: 0 auto; bottom: 2px;} #commentform #wp-comment-cookies-consent {width: auto;display: inline-flex;margin: 0 12px 0 auto;position: relative;} .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {width: 100%;margin: 0 auto;position: relative;}
+
+#torres-digital-background-head {
+    height: 200px;
+    background-image: url("/wp-content/themes/torresdigital/img/head/wordpress-community-2.jpg");
+    z-index: 0;
+    position: relative;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home .torres-digital-background-head, .home .breadcrumb-torres-digital {
+    display: none;
+}
+
+.breadcrumb-torres-digital {
+    width: auto;
+    top: -26px;
+    position: relative;
+    padding-left: 1px;
+    display: block;
+}
+
+/*Página de Post*/
+.content_background {
+  padding: 40px 10px;
+}
+/*Página de Busca: resultado*/
+.no-content p {
+  font-size: 25px;
+  text-align: center;
+}
+/*Head*/
+
+/*Woocommerce cart*/
+.login_cart_wrap.col-md-3.col-xs-12 {
+  float: none;
+  width: auto;
+  margin: 20px auto 0;
+  position: relative;
+  display: inline-block;
+  float: right;
+}
+/*Logo*/
+#torres-digita-logo {
+  width: 100%;
+  margin: 9px auto 0;
+  position: relative;
+  display: block;
+  text-align: center;
+  max-width: 135px;
+}
+/*Menu*/
+.ql_login-btn {text-transform: lowercase}
+.ql_logo_nav.col-md-9.col-xs-12 {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+.navbar-nav {
+  float: initial;
+  margin: 0 auto;
+}
+#jqueryslidemenu {
+    margin: 0 auto;
+    display: block;
+}
+#jqueryslidemenu ul.nav > li {
+  margin-left: 0;
+  display: inline-block;
+  float: initial;
+}
+#jqueryslidemenu ul.nav > li > a {
+  text-decoration: none;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  color: #555;
+  font-weight: 600;
+  text-transform: lowercase;
+}
+#jqueryslidemenu ul.nav > li > a:hover  {
+    color: #a08240;
+    background-color: transparent;
+}
+.current-menu-item a { color: #A08240 !important}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    color: #A08240;}
+/*Mobile Menu*/
+
+#ql_nav_btn {
+  position: relative;
+  right: 0;
+  top: 10px;
+  margin: 0;
+}
+.navbar-toggle {
+  position: relative;
+  float: left; 
+}
+
+/*Home*/
+
+/*Blog*/
+
+.col-md-6 {width: 100%;}.col-md-6 .post_title {text-align: center;margin-bottom: 19px;padding: 20px 0 0;}
+.col-md-6 .post_title a {font-size: 20px;}.col-md-6  .entry h2 {font-size: 17px;text-align: center;}
+.metadata {text-align: center}
+.metadata ul li {margin: 0 auto;display: inline-block;float: initial;}
+.blog article {max-width: 45%;display: inline-block;margin: 0 20px;padding: 0 10px;}
+.col-md-10 {width: 56.333%;}.col-md-push-2 {left: initial;float: left;width: 75.000%;}
+
+#sidebar {
+  float: initial;
+  margin: 0 10px;
+  padding: 0 10px;
+  position: relative;
+  width: auto;
+  display: inline-block;
+  right: initial;
+  max-width: 300px;
+}
+#sidebar .widget h4 {  text-transform: initial;}
+.blog article {
+    max-width: 45%;
+    display: inline-grid;
+    margin: 0 5px;
+    padding: 0 10px;
+}
+
+/*Post*/
+.single .post_title {font-size: 35px; text-align: center}
+.post-template-default .col-md-push-2 {
+  width: 60%;
+  margin: 0 35px;
+}
+
+/*Woocommerce*/
+.product-template-default .col-md-6 {
+    max-width: 50%;
+}
+.product-template-default .col-md-10 {
+    width: 100%;
+    max-width: 455px;
+    display: inline-block;
+}
+.owl-item {
+    max-width: 442px;
+    position: relative;
+    display: inline-block;
+}
+
+.woocommerce form .form-row .input-checkbox, .woocommerce-page form .form-row .input-checkbox {position: relative}
+.woocommerce.single-product span.onsale, .woocommerce span.onsale {  border-radius: 0; background-color: #A08240; padding: 8px 30px;line-height: 12px;min-height: 20px; }
+
+/*Footer*/
+#footer {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-top: 2px solid #f9f9f9;
+}
+
+.sub_footer p {
+  float: initial;
+  text-align: center;
+}
+.nav_social {
+  float: initial;
+}
+.nav_social li {
+  float: initial;
+  display: inline-block;
+}
+/*BootStrap*/
+
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+
+
+
+
+	/*==========  Mobile First Method  ==========*/
+
+	/* Custom, iPhone Retina */ 
+	@media only screen and (min-width : 320px) {
+	}
+
+	/* Extra Small Devices, Phones */ 
+	@media only screen and (min-width : 480px) {
+
+	}
+
+	/* Small Devices, Tablets */
+	@media only screen and (min-width : 768px) {
+    
+
+	}
+
+	/* Medium Devices, Desktops */
+	@media only screen and (min-width : 992px) {
+
+	}
+
+	/* Large Devices, Wide Screens */
+	@media only screen and (min-width : 1200px) {
+
+	}
+
+
+
+	/*==========  Non-Mobile First Method  ==========*/
+
+	/* Large Devices, Wide Screens */
+	@media only screen and (max-width : 1200px) {
+
+	}
+
+	/* Medium Devices, Desktops */
+	@media only screen and (max-width : 992px) {
+
+	}
+
+	/* Small Devices, Tablets */
+	@media only screen and (max-width : 768px) {
+
+	}
+
+	/* Extra Small Devices, Phones */ 
+	@media only screen and (max-width : 480px) {
+
+	}
+
+	/* Custom, iPhone Retina */ 
+	@media only screen and (max-width : 320px) {
+ 	}
+
+
+
+    /*=====================================================
+    =            Bootstrap 2.3.2 Media Queries            =
+    =====================================================*/
+@media only screen and (max-width : 1280px) { p, a, span, body { font-size: 14px; }
+        /*Home*/
+        /*Blog*/
+    .col-md-push-2 {width: 71%;}
+    .col-md-6 p {font-size: 14px;}
+    .col-sm-6 {width: 100%;}
+    .col-md-6 .post_title a {font-size: 18px;}
+    .blog article {max-width: 45%;display: inline-grid;margin: 0 10px;padding: 0 5px;}
+
+    }
+
+    @media only screen and (max-width : 1200px) {
+
+
+    }
+
+    @media only screen and (max-width : 1024px) { 
+
+        .container { width: 95%; } .ql_logo_nav.col-md-9.col-xs-12, #ql-navigation {  padding: 0; }
+         html .post-template-default .col-md-push-2 {width: auto;margin: 0 5px; padding: 0 15px}
+
+
+}
+
+    @media only screen and (max-width : 979px) {
+
+}
+
+    @media only screen and (max-width : 768px) {
+
+        .content_background { padding: 40px 20px; }
+       #jqueryslidemenu ul.nav > li {margin-left: 0;display: flex;float: initial;}
+          /*menu header*/
+        .login_btn_wrap {float: left; font-weight: 600}
+        .ql_login-btn {font-weight: 600; border: 1px solid #a6a6a6; border-radius: 30px; padding: 5px 15px;}
+        .ql_login-btn:hover {text-decoration: none;border-color: #a08240;}
+        .login_cart_wrap.col-md-3.col-xs-12 {width: 100%; padding: 0 10px}
+        .col-md-push-2 { left: initial; float: initial; width: 100%;  }
+
+}
+
+    @media only screen and (max-width : 640px) {
+
+        .container {width: 100%;}
+
+        /*menu header*
+        .login_btn_wrap {float: left; font-weight: 600}
+        .ql_login-btn {font-weight: 600;border: 1px solid #a6a6a6;border-radius: 30px;}
+        .ql_login-btn:hover {text-decoration: none;border-color: #a08240;}
+        .login_cart_wrap.col-md-3.col-xs-12 {width: 100%;}
+
+        .col-md-push-2 { left: initial;float: initial;width: 100%;  }
+        html .post-template-default .col-md-push-2 {width: auto;margin: 0 auto; padding: 0 15px}*/
+
+
+ }
+
+    @media only screen and (max-width : 480px) {
+
+        .blog article {  max-width: 100%; }
+
+}
+
+    @media only screen and (max-width : 320px) {
+
+}
+
+    /*
+      Based on:
+      1. http://stephen.io/mediaqueries
+      2. https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+    */
+
+    /* iPhone 6 in portrait & landscape */
+    @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) {
+
+    }
+
+    /* iPhone 6 in landscape */
+    @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) 
+    and (orientation : landscape) {
+
+    }
+
+    /* iPhone 6 in portrait */
+    @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) 
+    and (orientation : portrait) {
+
+    }
+
+    /* iPhone 6 Plus in portrait & landscape */
+    @media only screen 
+    and (min-device-width : 414px)
+    and (max-device-width : 736px) {
+
+}
+
+    /* iPhone 6 Plus in landscape */
+    @media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px) 
+    and (orientation : landscape) {
+
+    }
+
+    /* iPhone 6 Plus in portrait */
+    @media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px) 
+    and (orientation : portrait) {
+
+    }
+
+    /* iPhone 5 & 5S in portrait & landscape */
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 568px) {
+
+    }
+
+    /* iPhone 5 & 5S in landscape */
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 568px) 
+    and (orientation : landscape) {
+
+    }
+
+    /* iPhone 5 & 5S in portrait */
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 568px) 
+    and (orientation : portrait) {
+
+    }
+
+    /* 
+      iPhone 2G, 3G, 4, 4S Media Queries
+      It's noteworthy that these media queries are also the same for iPod Touch generations 1-4.
+    */
+
+    /* iPhone 2G-4S in portrait & landscape */
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px) {
+
+    }
+
+    /* iPhone 2G-4S in landscape */
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px) 
+    and (orientation : landscape) {
+
+    }
+
+    /* iPhone 2G-4S in portrait */
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px) 
+    and (orientation : portrait) {
+
+    }
+
+    /* iPad in portrait & landscape */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  {
+
+    }
+
+    /* iPad in landscape */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : landscape) {
+
+    }
+
+    /* iPad in portrait */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : portrait) {
+
+    }
+
+    /* Galaxy S3 portrait and landscape */
+    @media screen 
+      and (device-width: 320px) 
+      and (device-height: 640px) 
+      and (-webkit-device-pixel-ratio: 2) {
+
+    }
+
+    /* Galaxy S3 portrait */
+    @media screen 
+      and (device-width: 320px) 
+      and (device-height: 640px) 
+      and (-webkit-device-pixel-ratio: 2) 
+      and (orientation: portrait) {
+
+    }
+
+    /* Galaxy S3 landscape */
+    @media screen 
+      and (device-width: 320px) 
+      and (device-height: 640px) 
+      and (-webkit-device-pixel-ratio: 2) 
+      and (orientation: landscape) {
+
+    }
+
+    /* Galaxy S4 portrait and landscape */
+    @media screen 
+      and (device-width: 320px) 
+      and (device-height: 640px) 
+      and (-webkit-device-pixel-ratio: 3) {
+
+    }
+
+    /* Galaxy S4 portrait */
+    @media screen 
+      and (device-width: 320px) 
+      and (device-height: 640px) 
+      and (-webkit-device-pixel-ratio: 3) 
+      and (orientation: portrait) {
+
+    }
+
+    /* Galaxy S4 landscape */
+    @media screen 
+      and (device-width: 320px) 
+      and (device-height: 640px) 
+      and (-webkit-device-pixel-ratio: 3) 
+      and (orientation: landscape) {
+
+    }
+
+    /* Galaxy S5 portrait and landscape */
+    @media screen 
+      and (device-width: 360px) 
+      and (device-height: 640px) 
+      and (-webkit-device-pixel-ratio: 3) {
+
+    }
+
+    /* Galaxy S5 portrait */
+    @media screen 
+      and (device-width: 360px) 
+      and (device-height: 640px) 
+      and (-webkit-device-pixel-ratio: 3) 
+      and (orientation: portrait) {
+
+    }
+
+    /* Galaxy S5 landscape */
+    @media screen 
+      and (device-width: 360px) 
+      and (device-height: 640px) 
+      and (-webkit-device-pixel-ratio: 3) 
+      and (orientation: landscape) {
+
+    }
+
+    /* HTC One portrait and landscape */
+    @media screen 
+      and (device-width: 360px) 
+      and (device-height: 640px) 
+      and (-webkit-device-pixel-ratio: 3) {
+
+    }
+
+    /* HTC One portrait */
+    @media screen 
+      and (device-width: 360px) 
+      and (device-height: 640px) 
+      and (-webkit-device-pixel-ratio: 3) 
+      and (orientation: portrait) {
+
+    }
+
+    /* HTC One landscape */
+    @media screen 
+      and (device-width: 360px) 
+      and (device-height: 640px) 
+      and (-webkit-device-pixel-ratio: 3) 
+      and (orientation: landscape) {
+
+    }
+
+    /*
+      iPad 3 & 4 Media Queries
+      If you're looking to target only 3rd and 4th generation Retina iPads 
+      (or tablets with similar resolution) to add @2x graphics,
+      or other features for the tablet's Retina display, use the following media queries.
+    */
+
+    /* Retina iPad in portrait & landscape */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+
+    }
+
+    /* Retina iPad in landscape */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : landscape)
+    and (-webkit-min-device-pixel-ratio: 2) {
+
+    }
+
+    /* Retina iPad in portrait */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : portrait)
+    and (-webkit-min-device-pixel-ratio: 2) {
+
+    }
+
+    /*
+      iPad 1 & 2 Media Queries
+      If you're looking to supply different graphics or choose different typography 
+      for the lower resolution iPad display, the media queries below will work 
+      like a charm in your responsive design!
+    */
+
+    /* iPad 1 & 2 in portrait & landscape */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (-webkit-min-device-pixel-ratio: 1) {
+
+    }
+
+    /* iPad 1 & 2 in landscape */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : landscape)
+    and (-webkit-min-device-pixel-ratio: 1) {
+
+    }
+
+    /* iPad 1 & 2 in portrait */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio: 1) {
+
+    }
+
+    /* iPad mini in portrait & landscape */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)
+    and (-webkit-min-device-pixel-ratio: 1) {
+
+    }
+
+    /* iPad mini in landscape */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : landscape)
+    and (-webkit-min-device-pixel-ratio: 1) {
+
+    }
+
+    /* iPad mini in portrait */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : portrait)
+    and (-webkit-min-device-pixel-ratio: 1) {
+
+    }
+
+    /* Galaxy Tab 10.1 portrait and landscape */
+    @media
+      (min-device-width: 800px) 
+      and (max-device-width: 1280px) {
+
+    }
+
+    /* Galaxy Tab 10.1 portrait */
+    @media 
+      (max-device-width: 800px) 
+      and (orientation: portrait) { 
+
+    }
+
+    /* Galaxy Tab 10.1 landscape */
+    @media 
+      (max-device-width: 1280px) 
+      and (orientation: landscape) { 
+
+    }
+
+    /* Asus Nexus 7 portrait and landscape */
+    @media screen 
+      and (device-width: 601px) 
+      and (device-height: 906px) 
+      and (-webkit-min-device-pixel-ratio: 1.331) 
+      and (-webkit-max-device-pixel-ratio: 1.332) {
+
+    }
+
+    /* Asus Nexus 7 portrait */
+    @media screen 
+      and (device-width: 601px) 
+      and (device-height: 906px) 
+      and (-webkit-min-device-pixel-ratio: 1.331) 
+      and (-webkit-max-device-pixel-ratio: 1.332) 
+      and (orientation: portrait) {
+
+    }
+
+    /* Asus Nexus 7 landscape */
+    @media screen 
+      and (device-width: 601px) 
+      and (device-height: 906px) 
+      and (-webkit-min-device-pixel-ratio: 1.331) 
+      and (-webkit-max-device-pixel-ratio: 1.332) 
+      and (orientation: landscape) {
+
+    }
+
+    /* Kindle Fire HD 7" portrait and landscape */
+    @media only screen 
+      and (min-device-width: 800px) 
+      and (max-device-width: 1280px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) {
+
+    }
+
+    /* Kindle Fire HD 7" portrait */
+    @media only screen 
+      and (min-device-width: 800px) 
+      and (max-device-width: 1280px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) 
+      and (orientation: portrait) {
+
+    }
+
+    /* Kindle Fire HD 7" landscape */
+    @media only screen 
+      and (min-device-width: 800px) 
+      and (max-device-width: 1280px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) 
+      and (orientation: landscape) {
+
+    }
+
+    /* Kindle Fire HD 8.9" portrait and landscape */
+    @media only screen 
+      and (min-device-width: 1200px) 
+      and (max-device-width: 1600px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) {
+
+    }
+
+    /* Kindle Fire HD 8.9" portrait */
+    @media only screen 
+      and (min-device-width: 1200px) 
+      and (max-device-width: 1600px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) 
+      and (orientation: portrait) {
+
+    }
+
+    /* Kindle Fire HD 8.9" landscape */
+    @media only screen 
+      and (min-device-width: 1200px) 
+      and (max-device-width: 1600px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) 
+      and (orientation: landscape) {
+
+    }
+
+    /* Laptops non-retina screens */
+    @media screen 
+      and (min-device-width: 1200px) 
+      and (max-device-width: 1600px) 
+      and (-webkit-min-device-pixel-ratio: 1) {
+
+    }
+
+    /* Laptops retina screens */
+    @media screen 
+      and (min-device-width: 1200px)
+      and (max-device-width: 1600px)
+      and (-webkit-min-device-pixel-ratio: 2)
+      and (min-resolution: 192dpi) {
+
+    }
+
+    /* Apple Watch */
+    @media
+      (max-device-width: 42mm)
+      and (min-device-width: 38mm) { 
+
+    }
+
+    /* Moto 360 Watch */
+    @media 
+      (max-device-width: 218px)
+      and (max-device-height: 281px) { 
+
+    }
+
+
+
+/* 1.0 Normalize Styles based on Normalize v5.0.0 @link https: //github.com/necolas/normalize.css
+@import url('https://www.fontify.me/wf/d1e0123011c04b12846e626981f6fdd4');
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+-moz-osx-font-smoothing: grayscale; linear-gradient(to right, #58c7ec, #51ff6c)
+/*20.0 Print /http://bridgelanding.app/wp-content/uploads/2017/06/logo-stick.png
