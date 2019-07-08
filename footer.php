@@ -17,6 +17,6 @@
 </div><!-- /wrap -->
 <!-- WP_Footer --> 
 <?php wp_footer(); ?>
-<!-- /WP_Footer --> 
+<!-- /wp_Footer --> 
 </body>
 </html>
