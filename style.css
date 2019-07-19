@@ -330,7 +330,7 @@ body *:focus { outline-offset: none;  outline: none } body { background-color: #
 
         .container { width: 95%; } .ql_logo_nav.col-md-9.col-xs-12, #ql-navigation {  padding: 0; }
          html .post-template-default .col-md-push-2 {width: auto;margin: 0 5px; padding: 0 15px}
-        .sshos-logo-wrapper {left: 0;}
+        .sshos-logo-wrapper {left: 0;} #ql-navigation {border-bottom: 4px solid #f00;}
 
         #jqueryslidemenu ul.nav > li > a, .sshos-horizontal-menu-inner a,
         .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a {margin: 9px 5px 0;}
