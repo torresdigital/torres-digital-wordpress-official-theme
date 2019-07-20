@@ -388,14 +388,12 @@ body *:focus { outline-offset: none;  outline: none } body { background-color: #
 
         h1,h2,h3,h4,h5 {text-align: center}
         h2 {font-size: 27px;} h3 { font-size: 18px;  text-align: center;}
-
-}
-
         .blog article {  max-width: 100%; }
-
         .ql_login-btn {font-weight: 400;padding: 1px 10px;font-size: 11px;}
 
 }
+
+
 
     @media only screen and (max-width : 320px) {
 
