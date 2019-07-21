@@ -42,7 +42,7 @@
 
                             <div class="login_cart_wrap col-md-3 col-xs-12">
                                 <div id="menu-na-esquerda" class="menu-na-esquerda">
-                                    <?php wp_nav_menu( array( 'theme_location' => 'top-menu' ) ); ?>
+                              <!-- Menu extra - Torres Digital-->   <?php wp_nav_menu( array( 'theme_location' => 'top-menu' ) ); ?>
                                 </div>
                                 <div class="ql_cart_wrap">
                                     <button href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="ql_cart-btn">
