@@ -130,8 +130,8 @@ function enqueue_parent_styles() {
 
 /* registrando scripts *
 add_action("wp_enqueue_scripts", "scripts");
-function myscripts() { 
-    wp_register_script('tdwct', 
+function myscripts() {
+    wp_register_script('tdwct',
                         get_template_directory_uri() .'/js/scripts.js',   //
                         array ('jquery', 'jquery-ui'),                  //depends on these, however, they are registered by core already, so no need to enqueue them.
                         false, false);
@@ -147,10 +147,10 @@ function myscripts() {
 function my_enqueue_scripts()
 {
     wp_register_script( 'first', get_template_directory_uri() . 'js/first.js' );
- 
+
     wp_enqueue_script( 'second', get_template_directory_uri() . 'js/second.js', array( 'first' ) );
 }
-add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' ); 
+add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );
 
 */
 
@@ -163,11 +163,11 @@ add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );
 
 function myscripts() {
     //get some external script that is needed for this script
-    wp_enqueue_script('jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js'); 
+    wp_enqueue_script('jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js');
     $script = get_template_directory_uri() . '/library/myscript.js';
-    wp_register_script('myfirstscript', 
-                        $script, 
-                        array ('jquery', 'jquery-ui'), 
+    wp_register_script('myfirstscript',
+                        $script,
+                        array ('jquery', 'jquery-ui'),
                         false, false);
     //always enqueue the script after registering or nothing will happen
     wp_enqueue_script('fullpage-slimscroll');
@@ -180,7 +180,7 @@ add_action("wp_enqueue_scripts", "myscripts");
     */
     add_filter( 'login_headerurl', 'xs_login_headerurl' );
     function xs_login_headerurl( $url ) {
-    return esc_url(  'https://www.torresdigital.tk.'  );
+    return esc_url(  'https://www.torresdigital.tk'  );
     }
     add_filter( 'login_headertitle', 'xs_login_headertitle' );
     function xs_login_headertitle( $title ) {
@@ -280,8 +280,8 @@ add_action("wp_enqueue_scripts", "myscripts");
     ) );
 
 
-    function my_login_logo_one() {  ?> 
-        <style type="text/css"> 
+    function my_login_logo_one() {  ?>
+        <style type="text/css">
         body.login div#login h1 a {
             background-image: url(/wp-content/uploads/2018/10/logo-sites-torresdigital.png);
             background-size: 70%;
@@ -292,5 +292,5 @@ add_action("wp_enqueue_scripts", "myscripts");
             margin: 0 auto;
             left: 17px;
                                     }
-        </style> 
+        </style>
     <?php  } add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
