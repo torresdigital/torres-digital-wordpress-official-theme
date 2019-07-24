@@ -45,7 +45,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 }
 #sudo-su .torres-digital-background-head {
     height: 200px;
-    background-image: url("/wp-content/uploads/2019/07/background-loja-01.jpg");
+    background-image: url("/wp-content/uploads/2019/07/background-loja.jpg");
     z-index: 0;
     position: relative;
     background-attachment: fixed;
