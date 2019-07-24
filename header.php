@@ -40,11 +40,13 @@
 
                         <div class="ql_logo_nav col-md-9 col-xs-12">
 
-                            <div class="login_cart_wrap col-md-3 col-xs-12">
-                                <div id="menu-na-esquerda" class="menu-na-esquerda">
-                              <!-- Menu extra - Torres Digital-->   <?php wp_nav_menu( array( 'theme_location' => 'top-menu' ) ); ?>
+                            <div id="menu-na-esquerda" class="menu-na-esquerda">
+                                        <!-- Menu extra - Torres Digital-->
+                                     <?php wp_nav_menu( array( 'theme_location' => 'top-menu' ) ); ?>
                                 </div>
-                                <div class="ql_cart_wrap">
+
+                            <div class="login_cart_wrap col-md-3 col-xs-12">
+                                 <div class="ql_cart_wrap">
                                     <button href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="ql_cart-btn">
                                         <?php echo wp_kses_post( WC()->cart->get_cart_total() ); ?>
                                         <span class="count">(<?php echo esc_html( WC()->cart->cart_contents_count );?>)</span>

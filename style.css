@@ -31,7 +31,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 */
 
 /*Padrao*/
-body *:focus { outline-offset: none;  outline: none } body { background-color: #fff; } *, ::after, ::before {-webkit-box-sizing: border-box; box-sizing: border-box; -ms-word-wrap: break-word; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 {font-family: 'Inconsolata', monospace; color: #000} html .comment-form-cookies-consent {width: auto; display: inline-flex;} h1 {font-size: 34px; } h2 {font-size: 31px; margin-bottom: 22px} h3 {font-size: 22px; margin-bottom: 22px} h4, h5 {font-size: 18px} p, a, span, body, .sshos-horizontal-menu-inner a, .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a { font-size: 14px; font-family: 'Inconsolata', monospace; font-weight: 400; color: #555; letter-spacing: 1px;} p {  line-height: 140% } input, textarea {  border: 2px solid #f4f4f4; } blockquote p {color: #A08240;} #contato {width: 95%} .titulo {margin: 30px auto; border-bottom: 2px solid #f4f4f4; } #content.col-md-12 {padding: 0} html .comment-form-cookies-consent input[type="checkbox"] {height: auto; margin: 0 auto; bottom: 2px;} #commentform #wp-comment-cookies-consent {width: auto;display: inline-flex;margin: 0 12px 0 auto;position: relative;} .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {width: 100%;margin: 0 auto;position: relative; font-size: 14px}
+body *:focus { outline-offset: none;  outline: none } body { background-color: #fff; } *, ::after, ::before {-webkit-box-sizing: border-box; box-sizing: border-box; -ms-word-wrap: break-word; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 {font-family: 'Inconsolata', monospace; color: #000} html .comment-form-cookies-consent {width: auto; display: inline-flex;} h1 {font-size: 34px; } h2 {font-size: 31px; margin-bottom: 22px} h3 {font-size: 22px; margin-bottom: 22px} h4, h5 {font-size: 18px} p, a, span, body, .sshos-horizontal-menu-inner a, .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a { font-size: 14px; font-family: 'Inconsolata', monospace; font-weight: 400; color: #555; letter-spacing: 1px;} p {  line-height: 140% } input, textarea {  border: 2px solid #f4f4f4; } blockquote p {color: #A08240;} #contato {width: 95%} .titulo {margin: 30px auto; border-bottom: 2px solid #f4f4f4; } #content.col-md-12 {padding: 0} html .comment-form-cookies-consent input[type="checkbox"] {height: auto; margin: 0 auto; bottom: 2px;} #commentform #wp-comment-cookies-consent {width: auto;display: inline-flex;margin: 0 12px 0 auto;position: relative;} .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {width: 100%;margin: 0 auto;position: relative; font-size: 14px} .loop-carousel, #carrossel-modelos { overflow: hidden;}
 
 #torres-digital-background-head {
     height: 200px;
@@ -96,6 +96,7 @@ body *:focus { outline-offset: none;  outline: none } body { background-color: #
   max-width: 135px;
 }
 /*Menu*/
+.collapse {display: block}
 .ql_login-btn {text-transform: lowercase}
 .ql_logo_nav.col-md-9.col-xs-12 {
   width: 100%;
@@ -115,6 +116,7 @@ body *:focus { outline-offset: none;  outline: none } body { background-color: #
   display: inline-block;
   float: initial;
 }
+
 .sshos-dropdown-menu-button-inner {border-color: #fff}
 .sshos-logo-wrapper {left: 160px;position: relative;}
 .sshos-horizontal-menu-inner li {  display: inline; margin-right: 0px; }
@@ -122,8 +124,20 @@ body *:focus { outline-offset: none;  outline: none } body { background-color: #
 .sshos-horizontal-menu-wrapper { float: initial; margin: 0 auto;}
 .sshos-horizontal-menu-inner {border: none}
 
+#menu-na-esquerda {
+    width: auto;
+    float: left;
+    margin: 20px auto 0;
+    position: relative;
+}
+#menu-na-esquerda ul > li {
+    display: inline-block;
+}
+#menu-na-esquerda  .login_cart_wrap.col-md-3.col-xs-12 {margin: 0}
+#menu-na-esquerda .menu-top-menu-container ul > li > a {font-size: 14px; font-weight: 300; position: relative}
+
 #jqueryslidemenu ul.nav > li > a, .sshos-horizontal-menu-inner a,
-.sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a {
+.sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a, #menu-na-esquerda ul > li > a {
     text-decoration: none;
     font-size: 15px;
     font-size: 0.9375rem;
@@ -135,7 +149,8 @@ body *:focus { outline-offset: none;  outline: none } body { background-color: #
 }
 .nav > li > a:hover, .nav > li > a:focus,
 .sshos-horizontal-menu-inner a:focus,
-.sshos-dropdown-menu-wrapper li a:focus {
+.sshos-dropdown-menu-wrapper li a:focus,
+#menu-na-esquerda .menu-top-menu-container ul > li > a:focus {
     text-decoration: none;
     background-color: #C6AF7C;
     color: #fff !important;
@@ -330,7 +345,7 @@ body *:focus { outline-offset: none;  outline: none } body { background-color: #
 
         .container { width: 95%; } .ql_logo_nav.col-md-9.col-xs-12, #ql-navigation {  padding: 0; }
          html .post-template-default .col-md-push-2 {width: auto;margin: 0 5px; padding: 0 15px}
-        .sshos-logo-wrapper {left: 0;} #ql-navigation {border-bottom: 4px solid #f00;}
+        .sshos-logo-wrapper {left: 0;}
 
         #jqueryslidemenu ul.nav > li > a, .sshos-horizontal-menu-inner a,
         .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a {margin: 9px 5px 0;}
@@ -347,7 +362,13 @@ body *:focus { outline-offset: none;  outline: none } body { background-color: #
 }
   @media only screen and (max-width : 800px) {
 
+      .collapse { display: none; }   .collapse.in {  display: block; }
+
              #jqueryslidemenu ul.nav > li {margin-left: 0;display: flex;float: initial;}
+             #ql-navigation {border-bottom: 4px solid #f00;-webkit-box-shadow: 0px -4px 35px -25px rgba(0, 0, 0, 0.31);
+             -moz-box-shadow: 0px -4px 35px -25px rgba(0, 0, 0, 0.31);box-shadow: 0px -4px 35px -25px rgba(0, 0, 0, 0.31);}
+      .torres-digita-logo img { top: -56px; position: relative; margin: 0 auto; }
+      .torres-digita-logo { margin: 0 auto 12px; height: 200px; }
 
 }
 
@@ -379,7 +400,13 @@ body *:focus { outline-offset: none;  outline: none } body { background-color: #
         .login_cart_wrap.col-md-3.col-xs-12 {width: 100%;}
 
         .col-md-push-2 { left: initial;float: initial;width: 100%;  }
-        html .post-template-default .col-md-push-2 {width: auto;margin: 0 auto; padding: 0 15px}*/
+        html .post-template-default .col-md-push-2 {width: auto;margin: 0 auto; padding: 0 15px}
+
+                .example-item {  max-width: 50%; }
+
+
+        */
+
 
 
  }
