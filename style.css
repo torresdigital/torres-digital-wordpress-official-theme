@@ -31,7 +31,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 */
 
 /*Padrao*/
-* {box-sizing: border-box;} body *:focus { outline-offset: none;  outline: none } body { background-color: #fff; -webkit-font-smoothing: antialiased;} *, ::after, ::before {-webkit-box-sizing: border-box; box-sizing: border-box; -ms-word-wrap: break-word; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 {font-family: 'Inconsolata', monospace; color: #000} html .comment-form-cookies-consent {width: auto; display: inline-flex;} h1 {font-size: 34px; } h2 {font-size: 31px; margin-bottom: 22px} h3 {font-size: 22px; margin-bottom: 22px} h4, h5 {font-size: 18px} p, a, span, body, .sshos-horizontal-menu-inner a, .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a { font-size: 14px; font-family: 'Inconsolata', monospace; font-weight: 400; color: #555; letter-spacing: 1px;} p {  line-height: 140% } input, textarea {  border: 2px solid #f4f4f4; } blockquote p {color: #A08240;} #contato {width: 95%} .titulo {margin: 30px auto; border-bottom: 2px solid #f4f4f4; } #content.col-md-12 {padding: 0} html .comment-form-cookies-consent input[type="checkbox"] {height: auto; margin: 0 auto; bottom: 2px;} #commentform #wp-comment-cookies-consent {width: auto;display: inline-flex;margin: 0 12px 0 auto;position: relative;} .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {width: 100%;margin: 0 auto;position: relative; font-size: 14px} .loop-carousel, #carrossel-modelos { overflow: hidden;}
+* {box-sizing: border-box;} body *:focus { outline-offset: none;  outline: none } body { background-color: #fff; -webkit-font-smoothing: antialiased;} *, ::after, ::before {-webkit-box-sizing: border-box; box-sizing: border-box; -ms-word-wrap: break-word; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 {font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619 /*#000*/} html .comment-form-cookies-consent {width: auto; display: inline-flex;} h1 {font-size: 34px; } h2 {font-size: 31px; margin-bottom: 22px} h3 {font-size: 22px; margin-bottom: 22px} h4, h5 {font-size: 18px} p, a, span, body, .sshos-horizontal-menu-inner a, .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a { font-size: 14px; font-family: 'Inconsolata', monospace; font-weight: 400; color: #555; letter-spacing: 1px;} p {  line-height: 140% } input, textarea {  border: 2px solid #f4f4f4; } blockquote p {color: #A08240;} #contato {width: 95%} .titulo {margin: 30px auto; border-bottom: 2px solid #f4f4f4; } #content.col-md-12 {padding: 0} html .comment-form-cookies-consent input[type="checkbox"] {height: auto; margin: 0 auto; bottom: 2px;} #commentform #wp-comment-cookies-consent {width: auto;display: inline-flex;margin: 0 12px 0 auto;position: relative;} .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {width: 100%;margin: 0 auto;position: relative; font-size: 14px} .loop-carousel, #carrossel-modelos { overflow: hidden;}
 
 #torres-digital-background-head {
     height: 200px;
@@ -45,7 +45,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 }
 #sudo-su .torres-digital-background-head {
     height: 200px;
-    background-image: url("/wp-content/uploads/2019/07/background-loja.jpg");
+    background-image: url("/wp-content/uploads/2019/07/background-loja-01.jpg");
     z-index: 0;
     position: relative;
     background-attachment: fixed;
@@ -185,7 +185,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 }
 .navbar-toggle {
   position: relative;
-  float: left; 
+  float: left;
 }
 
 .sshos-dropdown-menu-wrapper-active { left: 5px; width: 97%;}
@@ -277,18 +277,18 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
 	/*==========  Mobile First Method  ==========*/
 
-	/* Custom, iPhone Retina */ 
+	/* Custom, iPhone Retina */
 	@media only screen and (min-width : 320px) {
 	}
 
-	/* Extra Small Devices, Phones */ 
+	/* Extra Small Devices, Phones */
 	@media only screen and (min-width : 480px) {
 
 	}
 
 	/* Small Devices, Tablets */
 	@media only screen and (min-width : 768px) {
-    
+
 
 	}
 
@@ -321,12 +321,12 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
 	}
 
-	/* Extra Small Devices, Phones */ 
+	/* Extra Small Devices, Phones */
 	@media only screen and (max-width : 480px) {
 
 	}
 
-	/* Custom, iPhone Retina */ 
+	/* Custom, iPhone Retina */
 	@media only screen and (max-width : 320px) {
  	}
 
@@ -358,7 +358,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
          html .post-template-default .col-md-push-2 {width: auto;margin: 0 5px; padding: 0 15px}
         .sshos-logo-wrapper {left: 0;}
 
-        #jqueryslidemenu ul.nav > li > a, .sshos-horizontal-menu-inner a, 
+        #jqueryslidemenu ul.nav > li > a, .sshos-horizontal-menu-inner a,
         .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a {margin: 9px 5px 0;}
 
 
@@ -373,7 +373,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 }
   @media only screen and (max-width : 800px) {
 
-      .collapse { display: none; }   .collapse.in {  display: block; } 
+      .collapse { display: none; }   .collapse.in {  display: block; }
 
              #jqueryslidemenu ul.nav > li {margin-left: 0;display: flex;float: initial;}
              #ql-navigation {border-bottom: 4px solid #f00;-webkit-box-shadow: 0px -4px 35px -25px rgba(0, 0, 0, 0.31);
@@ -412,12 +412,12 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
         .col-md-push-2 { left: initial;float: initial;width: 100%;  }
         html .post-template-default .col-md-push-2 {width: auto;margin: 0 auto; padding: 0 15px}
-        
+
                 .example-item {  max-width: 50%; }
 
 
         */
-        
+
 
 
  }
@@ -444,257 +444,257 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     */
 
     /* iPhone 6 in portrait & landscape */
-    @media only screen 
-    and (min-device-width : 375px) 
+    @media only screen
+    and (min-device-width : 375px)
     and (max-device-width : 667px) {
 
     }
 
     /* iPhone 6 in landscape */
-    @media only screen 
-    and (min-device-width : 375px) 
-    and (max-device-width : 667px) 
+    @media only screen
+    and (min-device-width : 375px)
+    and (max-device-width : 667px)
     and (orientation : landscape) {
 
     }
 
     /* iPhone 6 in portrait */
-    @media only screen 
-    and (min-device-width : 375px) 
-    and (max-device-width : 667px) 
+    @media only screen
+    and (min-device-width : 375px)
+    and (max-device-width : 667px)
     and (orientation : portrait) {
 
     }
 
     /* iPhone 6 Plus in portrait & landscape */
-    @media only screen 
+    @media only screen
     and (min-device-width : 414px)
     and (max-device-width : 736px) {
 
 }
 
     /* iPhone 6 Plus in landscape */
-    @media only screen 
-    and (min-device-width : 414px) 
-    and (max-device-width : 736px) 
+    @media only screen
+    and (min-device-width : 414px)
+    and (max-device-width : 736px)
     and (orientation : landscape) {
 
     }
 
     /* iPhone 6 Plus in portrait */
-    @media only screen 
-    and (min-device-width : 414px) 
-    and (max-device-width : 736px) 
+    @media only screen
+    and (min-device-width : 414px)
+    and (max-device-width : 736px)
     and (orientation : portrait) {
 
     }
 
     /* iPhone 5 & 5S in portrait & landscape */
-    @media only screen 
-    and (min-device-width : 320px) 
+    @media only screen
+    and (min-device-width : 320px)
     and (max-device-width : 568px) {
 
     }
 
     /* iPhone 5 & 5S in landscape */
-    @media only screen 
-    and (min-device-width : 320px) 
-    and (max-device-width : 568px) 
+    @media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 568px)
     and (orientation : landscape) {
 
     }
 
     /* iPhone 5 & 5S in portrait */
-    @media only screen 
-    and (min-device-width : 320px) 
-    and (max-device-width : 568px) 
+    @media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 568px)
     and (orientation : portrait) {
 
     }
 
-    /* 
+    /*
       iPhone 2G, 3G, 4, 4S Media Queries
       It's noteworthy that these media queries are also the same for iPod Touch generations 1-4.
     */
 
     /* iPhone 2G-4S in portrait & landscape */
-    @media only screen 
-    and (min-device-width : 320px) 
+    @media only screen
+    and (min-device-width : 320px)
     and (max-device-width : 480px) {
 
     }
 
     /* iPhone 2G-4S in landscape */
-    @media only screen 
-    and (min-device-width : 320px) 
-    and (max-device-width : 480px) 
+    @media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 480px)
     and (orientation : landscape) {
 
     }
 
     /* iPhone 2G-4S in portrait */
-    @media only screen 
-    and (min-device-width : 320px) 
-    and (max-device-width : 480px) 
+    @media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 480px)
     and (orientation : portrait) {
 
     }
 
     /* iPad in portrait & landscape */
-    @media only screen 
-    and (min-device-width : 768px) 
+    @media only screen
+    and (min-device-width : 768px)
     and (max-device-width : 1024px)  {
 
     }
 
     /* iPad in landscape */
-    @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
+    @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
     and (orientation : landscape) {
 
     }
 
     /* iPad in portrait */
-    @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
+    @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
     and (orientation : portrait) {
 
     }
 
     /* Galaxy S3 portrait and landscape */
-    @media screen 
-      and (device-width: 320px) 
-      and (device-height: 640px) 
+    @media screen
+      and (device-width: 320px)
+      and (device-height: 640px)
       and (-webkit-device-pixel-ratio: 2) {
 
     }
 
     /* Galaxy S3 portrait */
-    @media screen 
-      and (device-width: 320px) 
-      and (device-height: 640px) 
-      and (-webkit-device-pixel-ratio: 2) 
+    @media screen
+      and (device-width: 320px)
+      and (device-height: 640px)
+      and (-webkit-device-pixel-ratio: 2)
       and (orientation: portrait) {
 
     }
 
     /* Galaxy S3 landscape */
-    @media screen 
-      and (device-width: 320px) 
-      and (device-height: 640px) 
-      and (-webkit-device-pixel-ratio: 2) 
+    @media screen
+      and (device-width: 320px)
+      and (device-height: 640px)
+      and (-webkit-device-pixel-ratio: 2)
       and (orientation: landscape) {
 
     }
 
     /* Galaxy S4 portrait and landscape */
-    @media screen 
-      and (device-width: 320px) 
-      and (device-height: 640px) 
+    @media screen
+      and (device-width: 320px)
+      and (device-height: 640px)
       and (-webkit-device-pixel-ratio: 3) {
 
     }
 
     /* Galaxy S4 portrait */
-    @media screen 
-      and (device-width: 320px) 
-      and (device-height: 640px) 
-      and (-webkit-device-pixel-ratio: 3) 
+    @media screen
+      and (device-width: 320px)
+      and (device-height: 640px)
+      and (-webkit-device-pixel-ratio: 3)
       and (orientation: portrait) {
 
     }
 
     /* Galaxy S4 landscape */
-    @media screen 
-      and (device-width: 320px) 
-      and (device-height: 640px) 
-      and (-webkit-device-pixel-ratio: 3) 
+    @media screen
+      and (device-width: 320px)
+      and (device-height: 640px)
+      and (-webkit-device-pixel-ratio: 3)
       and (orientation: landscape) {
 
     }
 
     /* Galaxy S5 portrait and landscape */
-    @media screen 
-      and (device-width: 360px) 
-      and (device-height: 640px) 
+    @media screen
+      and (device-width: 360px)
+      and (device-height: 640px)
       and (-webkit-device-pixel-ratio: 3) {
 
     }
 
     /* Galaxy S5 portrait */
-    @media screen 
-      and (device-width: 360px) 
-      and (device-height: 640px) 
-      and (-webkit-device-pixel-ratio: 3) 
+    @media screen
+      and (device-width: 360px)
+      and (device-height: 640px)
+      and (-webkit-device-pixel-ratio: 3)
       and (orientation: portrait) {
 
     }
 
     /* Galaxy S5 landscape */
-    @media screen 
-      and (device-width: 360px) 
-      and (device-height: 640px) 
-      and (-webkit-device-pixel-ratio: 3) 
+    @media screen
+      and (device-width: 360px)
+      and (device-height: 640px)
+      and (-webkit-device-pixel-ratio: 3)
       and (orientation: landscape) {
 
     }
 
     /* HTC One portrait and landscape */
-    @media screen 
-      and (device-width: 360px) 
-      and (device-height: 640px) 
+    @media screen
+      and (device-width: 360px)
+      and (device-height: 640px)
       and (-webkit-device-pixel-ratio: 3) {
 
     }
 
     /* HTC One portrait */
-    @media screen 
-      and (device-width: 360px) 
-      and (device-height: 640px) 
-      and (-webkit-device-pixel-ratio: 3) 
+    @media screen
+      and (device-width: 360px)
+      and (device-height: 640px)
+      and (-webkit-device-pixel-ratio: 3)
       and (orientation: portrait) {
 
     }
 
     /* HTC One landscape */
-    @media screen 
-      and (device-width: 360px) 
-      and (device-height: 640px) 
-      and (-webkit-device-pixel-ratio: 3) 
+    @media screen
+      and (device-width: 360px)
+      and (device-height: 640px)
+      and (-webkit-device-pixel-ratio: 3)
       and (orientation: landscape) {
 
     }
 
     /*
       iPad 3 & 4 Media Queries
-      If you're looking to target only 3rd and 4th generation Retina iPads 
+      If you're looking to target only 3rd and 4th generation Retina iPads
       (or tablets with similar resolution) to add @2x graphics,
       or other features for the tablet's Retina display, use the following media queries.
     */
 
     /* Retina iPad in portrait & landscape */
-    @media only screen 
-    and (min-device-width : 768px) 
+    @media only screen
+    and (min-device-width : 768px)
     and (max-device-width : 1024px)
     and (-webkit-min-device-pixel-ratio: 2) {
 
     }
 
     /* Retina iPad in landscape */
-    @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
+    @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
     and (orientation : landscape)
     and (-webkit-min-device-pixel-ratio: 2) {
 
     }
 
     /* Retina iPad in portrait */
-    @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
+    @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
     and (orientation : portrait)
     and (-webkit-min-device-pixel-ratio: 2) {
 
@@ -702,58 +702,58 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
     /*
       iPad 1 & 2 Media Queries
-      If you're looking to supply different graphics or choose different typography 
-      for the lower resolution iPad display, the media queries below will work 
+      If you're looking to supply different graphics or choose different typography
+      for the lower resolution iPad display, the media queries below will work
       like a charm in your responsive design!
     */
 
     /* iPad 1 & 2 in portrait & landscape */
-    @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
+    @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
     and (-webkit-min-device-pixel-ratio: 1) {
 
     }
 
     /* iPad 1 & 2 in landscape */
-    @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
+    @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
     and (orientation : landscape)
     and (-webkit-min-device-pixel-ratio: 1) {
 
     }
 
     /* iPad 1 & 2 in portrait */
-    @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
-    and (orientation : portrait) 
+    @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
+    and (orientation : portrait)
     and (-webkit-min-device-pixel-ratio: 1) {
 
     }
 
     /* iPad mini in portrait & landscape */
-    @media only screen 
-    and (min-device-width : 768px) 
+    @media only screen
+    and (min-device-width : 768px)
     and (max-device-width : 1024px)
     and (-webkit-min-device-pixel-ratio: 1) {
 
     }
 
     /* iPad mini in landscape */
-    @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
+    @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
     and (orientation : landscape)
     and (-webkit-min-device-pixel-ratio: 1) {
 
     }
 
     /* iPad mini in portrait */
-    @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
+    @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
     and (orientation : portrait)
     and (-webkit-min-device-pixel-ratio: 1) {
 
@@ -761,116 +761,116 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
     /* Galaxy Tab 10.1 portrait and landscape */
     @media
-      (min-device-width: 800px) 
+      (min-device-width: 800px)
       and (max-device-width: 1280px) {
 
     }
 
     /* Galaxy Tab 10.1 portrait */
-    @media 
-      (max-device-width: 800px) 
-      and (orientation: portrait) { 
+    @media
+      (max-device-width: 800px)
+      and (orientation: portrait) {
 
     }
 
     /* Galaxy Tab 10.1 landscape */
-    @media 
-      (max-device-width: 1280px) 
-      and (orientation: landscape) { 
+    @media
+      (max-device-width: 1280px)
+      and (orientation: landscape) {
 
     }
 
     /* Asus Nexus 7 portrait and landscape */
-    @media screen 
-      and (device-width: 601px) 
-      and (device-height: 906px) 
-      and (-webkit-min-device-pixel-ratio: 1.331) 
+    @media screen
+      and (device-width: 601px)
+      and (device-height: 906px)
+      and (-webkit-min-device-pixel-ratio: 1.331)
       and (-webkit-max-device-pixel-ratio: 1.332) {
 
     }
 
     /* Asus Nexus 7 portrait */
-    @media screen 
-      and (device-width: 601px) 
-      and (device-height: 906px) 
-      and (-webkit-min-device-pixel-ratio: 1.331) 
-      and (-webkit-max-device-pixel-ratio: 1.332) 
+    @media screen
+      and (device-width: 601px)
+      and (device-height: 906px)
+      and (-webkit-min-device-pixel-ratio: 1.331)
+      and (-webkit-max-device-pixel-ratio: 1.332)
       and (orientation: portrait) {
 
     }
 
     /* Asus Nexus 7 landscape */
-    @media screen 
-      and (device-width: 601px) 
-      and (device-height: 906px) 
-      and (-webkit-min-device-pixel-ratio: 1.331) 
-      and (-webkit-max-device-pixel-ratio: 1.332) 
+    @media screen
+      and (device-width: 601px)
+      and (device-height: 906px)
+      and (-webkit-min-device-pixel-ratio: 1.331)
+      and (-webkit-max-device-pixel-ratio: 1.332)
       and (orientation: landscape) {
 
     }
 
     /* Kindle Fire HD 7" portrait and landscape */
-    @media only screen 
-      and (min-device-width: 800px) 
-      and (max-device-width: 1280px) 
+    @media only screen
+      and (min-device-width: 800px)
+      and (max-device-width: 1280px)
       and (-webkit-min-device-pixel-ratio: 1.5) {
 
     }
 
     /* Kindle Fire HD 7" portrait */
-    @media only screen 
-      and (min-device-width: 800px) 
-      and (max-device-width: 1280px) 
-      and (-webkit-min-device-pixel-ratio: 1.5) 
+    @media only screen
+      and (min-device-width: 800px)
+      and (max-device-width: 1280px)
+      and (-webkit-min-device-pixel-ratio: 1.5)
       and (orientation: portrait) {
 
     }
 
     /* Kindle Fire HD 7" landscape */
-    @media only screen 
-      and (min-device-width: 800px) 
-      and (max-device-width: 1280px) 
-      and (-webkit-min-device-pixel-ratio: 1.5) 
+    @media only screen
+      and (min-device-width: 800px)
+      and (max-device-width: 1280px)
+      and (-webkit-min-device-pixel-ratio: 1.5)
       and (orientation: landscape) {
 
     }
 
     /* Kindle Fire HD 8.9" portrait and landscape */
-    @media only screen 
-      and (min-device-width: 1200px) 
-      and (max-device-width: 1600px) 
+    @media only screen
+      and (min-device-width: 1200px)
+      and (max-device-width: 1600px)
       and (-webkit-min-device-pixel-ratio: 1.5) {
 
     }
 
     /* Kindle Fire HD 8.9" portrait */
-    @media only screen 
-      and (min-device-width: 1200px) 
-      and (max-device-width: 1600px) 
-      and (-webkit-min-device-pixel-ratio: 1.5) 
+    @media only screen
+      and (min-device-width: 1200px)
+      and (max-device-width: 1600px)
+      and (-webkit-min-device-pixel-ratio: 1.5)
       and (orientation: portrait) {
 
     }
 
     /* Kindle Fire HD 8.9" landscape */
-    @media only screen 
-      and (min-device-width: 1200px) 
-      and (max-device-width: 1600px) 
-      and (-webkit-min-device-pixel-ratio: 1.5) 
+    @media only screen
+      and (min-device-width: 1200px)
+      and (max-device-width: 1600px)
+      and (-webkit-min-device-pixel-ratio: 1.5)
       and (orientation: landscape) {
 
     }
 
     /* Laptops non-retina screens */
-    @media screen 
-      and (min-device-width: 1200px) 
-      and (max-device-width: 1600px) 
+    @media screen
+      and (min-device-width: 1200px)
+      and (max-device-width: 1600px)
       and (-webkit-min-device-pixel-ratio: 1) {
 
     }
 
     /* Laptops retina screens */
-    @media screen 
+    @media screen
       and (min-device-width: 1200px)
       and (max-device-width: 1600px)
       and (-webkit-min-device-pixel-ratio: 2)
@@ -881,14 +881,14 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     /* Apple Watch */
     @media
       (max-device-width: 42mm)
-      and (min-device-width: 38mm) { 
+      and (min-device-width: 38mm) {
 
     }
 
     /* Moto 360 Watch */
-    @media 
+    @media
       (max-device-width: 218px)
-      and (max-device-height: 281px) { 
+      and (max-device-height: 281px) {
 
     }
 
