@@ -35,3 +35,5 @@ You can contact us at contato@torresdigital.tk
 Initial release
 
 == Notes ==
+
+![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
