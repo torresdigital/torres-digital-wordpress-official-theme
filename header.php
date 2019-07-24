@@ -14,6 +14,8 @@
 
         gtag('config', 'UA-140394692-1');
     </script>
+    
+    <meta name="google-site-verification" content="zQE-2Pv_zdBHks0QFN1VjRDW-WQC6qAe4pYnuWXR4zI" />
 
 
     <!--[if lt IE 9]>
@@ -40,10 +42,14 @@
 
                         <div class="ql_logo_nav col-md-9 col-xs-12">
 
-                            <div id="menu-na-esquerda" class="menu-na-esquerda">
+                           <div id="menu-na-esquerda" class="menu-na-esquerda">
                                         <!-- Menu extra - Torres Digital-->
+                                <div class="login_cart_wrap col-md-3 col-xs-12"> 
                                      <?php wp_nav_menu( array( 'theme_location' => 'top-menu' ) ); ?>
                                 </div>
+                                        <!-- //Menu extra - Torres Digital-->
+                           </div>
+
 
                             <div class="login_cart_wrap col-md-3 col-xs-12">
                                  <div class="ql_cart_wrap">
@@ -56,12 +62,12 @@
                                     <div id="ql_woo_cart">
                                         <?php global $woocommerce; ?>
                                         <?php the_widget('WC_Widget_Cart');  ?>
-                                    </div><!-- /ql_woo_cart -->
+                                    </div><!-- /ql_woo_cart --> 
                                 </div>
                                 <div class="login_btn_wrap">
                                     <?php if ( is_user_logged_in() ) { ?>
                                         <a class="ql_login-btn" href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>" title="<?php esc_attr_e( 'My Account', 'shophistic-lite' ); ?>"><?php esc_html_e( 'My Account', 'shophistic-lite' ); ?></a>
-                                     <?php }
+                                     <?php } 
                                      else { ?>
                                         <a class="ql_login-btn" href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>" title="<?php esc_attr_e( 'Login', 'shophistic-lite' ); ?>"><?php esc_html_e( 'Login', 'shophistic-lite' ); ?></a>
                                      <?php } ?>
@@ -69,7 +75,7 @@
                                 <div class="clearfix"></div>
                             </div><!-- col-md-4 -->
 
-                        <div class="logo_container">
+                        <div class="logo_container"> 
                             <!--  <a href="< ?php echo home_url(); ?>/" class="ql_logo google-font">
                                 < ?php bloginfo('name'); ?> </a> -->
                                 <button id="ql_nav_btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ql-navigation" aria-expanded="false">
@@ -90,14 +96,14 @@
                             <div class="collapse navbar-collapse" id="ql-navigation">
                                 <nav id="jqueryslidemenu" class="jqueryslidemenu navbar " role="navigation">
                                     <?php
-                                    if ( has_nav_menu( 'menu-1' ) ){
+                                    if ( has_nav_menu( 'menu-1' ) ){ 
                                             wp_nav_menu( array(
                                             'theme_location'  => 'menu-1',
                                             'depth'             => 3,
                                             'menu_class'        => 'nav navbar-nav',
                                             'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
                                             'walker'            => new wp_bootstrap_navwalker()
-                                        ));
+                                        )); 
                                     }else{
                                         echo "<ul id='nav' class='nav navbar-nav'>";
                                         wp_list_pages( array(
@@ -105,7 +111,7 @@
                                             )
                                         );
                                         echo "</ul>";
-                                    };
+                                    }; 
                                     ?>
                                 </nav>
                             </div>
