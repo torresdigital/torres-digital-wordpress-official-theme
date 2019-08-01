@@ -31,7 +31,19 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 */
 
 /*Padrao*/
-* {box-sizing: border-box;} body *:focus { outline-offset: none;  outline: none } body { background-color: #fff; -webkit-font-smoothing: antialiased;} *, ::after, ::before {-webkit-box-sizing: border-box; box-sizing: border-box; -ms-word-wrap: break-word; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 {font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619 /*#000*/} html .comment-form-cookies-consent {width: auto; display: inline-flex;} h1 {font-size: 34px; } h2 {font-size: 31px; margin-bottom: 22px} h3 {font-size: 22px; margin-bottom: 22px} h4, h5 {font-size: 18px} p, a, span, body, .sshos-horizontal-menu-inner a, .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a { font-size: 14px; font-family: 'Inconsolata', monospace; font-weight: 400; color: #555; letter-spacing: 1px;} p {  line-height: 140% } input, textarea {  border: 2px solid #f4f4f4; } blockquote p {color: #A08240;} #contato {width: 95%} .titulo {margin: 30px auto; border-bottom: 2px solid #f4f4f4; } #content.col-md-12 {padding: 0} html .comment-form-cookies-consent input[type="checkbox"] {height: auto; margin: 0 auto; bottom: 2px;} #commentform #wp-comment-cookies-consent {width: auto;display: inline-flex;margin: 0 12px 0 auto;position: relative;} .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {width: 100%;margin: 0 auto;position: relative; font-size: 14px} .loop-carousel, #carrossel-modelos { overflow: hidden;}
+* {box-sizing: border-box;} body *:focus { outline-offset: none;  outline: none } body { background-color: #fff; -webkit-font-smoothing: antialiased;} *, ::after, ::before {-webkit-box-sizing: border-box; box-sizing: border-box; -ms-word-wrap: break-word; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 {font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619 /*#000*/} html .comment-form-cookies-consent {width: auto; display: inline-flex;} h1 {font-size: 34px; } h2 {font-size: 31px; margin-bottom: 22px} h3 {font-size: 22px; margin-bottom: 22px} h4, h5 {font-size: 18px} p, a, span, body, .sshos-horizontal-menu-inner a, .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a { font-size: 14px; font-family: 'Inconsolata', monospace; font-weight: 400; color: #555; letter-spacing: 1px;} p {  line-height: 140% } input, textarea {  border: 2px solid #f4f4f4; } blockquote p {color: #A08240;} #contato {width: 95%} .titulo {margin: 30px auto; border-bottom: 2px solid #f4f4f4; } #content.col-md-12 {padding: 0} html .comment-form-cookies-consent input[type="checkbox"] {height: auto; margin: 0 auto; bottom: 2px;} #commentform #wp-comment-cookies-consent {width: auto;display: inline-flex;margin: 0 12px 0 auto;position: relative;} .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {width: 100%;margin: 0 auto;position: relative; font-size: 14px}
+
+.loop-carousel, #carrossel-modelos { overflow: hidden;}
+#carrossel-modelos  {
+    max-width: 100%;
+    display: block;
+    float: initial !important;
+    text-align: center;
+    position: relative !important;
+    margin: 0 auto !important;
+    left: 0 !important;
+    right: 0;
+}
 
 #torres-digital-background-head {
     height: 200px;
@@ -45,7 +57,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 }
 #sudo-su .torres-digital-background-head {
     height: 200px;
-    background-image: url("/wp-content/uploads/2019/07/background-store.jpg");
+    background-image: url("/wp-content/uploads/2019/07/background-loja.jpg");
     z-index: 0;
     position: relative;
     background-attachment: fixed;
@@ -70,7 +82,8 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
 /*Página de Post*/
 .content_background {
-  padding: 40px 10px;
+    padding: 40px 10px;
+    box-shadow: 0px -4px 35px -25px rgba(0, 0, 0, 0.31);
 }
 /*Página de Busca: resultado*/
 .no-content p {
@@ -222,6 +235,8 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
 /*Pages*/
 .page-title {letter-spacing: 7px;}
+
+#center-sudo-su-- { margin-bottom: 50px; }
 /*Post*/
 .single .post_title {font-size: 35px; text-align: center}
 .post-template-default .col-md-push-2 {
@@ -372,8 +387,16 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
 }
   @media only screen and (max-width : 800px) {
+        /*I got your misfortune, son of a bitch! #QuemaLabs!*/
+      .navbar-collapse.collapse, .collapse  { display: none !important; }
+      .collapse.in {  display: block !important; }
 
-      .collapse { display: none; }   .collapse.in {  display: block; }
+
+         .navbar-toggle {display: initial !important}
+       .login_cart_wrap.col-md-3.col-xs-12 {width: 100%; padding: 0 10px}
+        .col-md-push-2 { left: initial; float: initial; width: 100%;  }
+
+
 
              #jqueryslidemenu ul.nav > li {margin-left: 0;display: flex;float: initial;}
              #ql-navigation {border-bottom: 4px solid #f00;-webkit-box-shadow: 0px -4px 35px -25px rgba(0, 0, 0, 0.31);
@@ -388,12 +411,15 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
         .content_background { padding: 40px 20px; }
           /*menu header*/
         .login_btn_wrap {float: left; font-weight: 600}
-        .ql_login-btn {font-weight: 600; border: 1px solid #a6a6a6; border-radius: 30px; padding: 2px 15px;}
-        .ql_login-btn:hover {text-decoration: none;border-color: #a08240;}
-        .login_cart_wrap.col-md-3.col-xs-12 {width: 100%; padding: 0 10px}
-        .col-md-push-2 { left: initial; float: initial; width: 100%;  }
+        .ql_login-btn {font-weight: 600; border: translate; background: #A08240; border-radius: 30px; padding: 2px 15px; color: #fff; }
+        .ql_login-btn:hover {text-decoration: none;/*border-color: #a08240;*/ color: #fff;
 
-        .navbar-toggle {display: initial !important}
+            -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.55);
+            -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.55);
+            box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.55);
+        }
+
+
         #jqueryslidemenu {margin-bottom: 10px}
 
 }
@@ -906,7 +932,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 	font-style: normal;
 }
 
-/* @font-face { */
+@font-face {
 	font-family: 'Futura PT';
 	src: url("/wp-content/themes/torresdigital/fonts/FuturaPT-BookObl.woff2") format("woff2"), url("/wp-content/themes/torresdigital/fonts/fonts/FuturaPT-BookObl.woff") format("woff");
 	font-weight: normal;
