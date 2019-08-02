@@ -39,8 +39,10 @@
    <!-- /WP_Head -->
 </head>
 
-<div id="sudo-su" class="torres-digital">
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> >
+
+    <div id="sudo-su" class="torres-digital sudo-su">
+
 
 	<div id="wrap">
             <header id="header">
@@ -135,8 +137,8 @@
                     </div><!-- row-->
                 </div><!-- /container -->
 
-                <div id="torres-digital-background-head" class="torres-digital-background-head"></div>
 
+    <div class="clearfix">
+                                <div id="torres-digital-background-head" class="torres-digital-background-head"></div>
 
-
-    <div class="clearfix"></div>
+                </div>
