@@ -55,8 +55,13 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+/*.archive.post-type-archive.post-type-archive-product.woocommerce.woocommerce-page.woocommerce-js.\%f0\%9f\%8c\%9ftorres-digital.ver2\.2\.0.wpb-js-composer.js-comp-ver-5\.7.vc_responsive.pace-done .torres-digital-background-head { background-image: url("/wp-content/uploads/2019/07/background-loja-v.2.jpg") !important;}
+.page-id-29 .torres-digital-background-head { background-image: url("/wp-content/uploads/2019/07/background-loja-v.2.jpg") !important;}*/
+
+
 #sudo-su .torres-digital-background-head {
-    height: 200px;
+    height: 250px;
     background-image: url("/wp-content/uploads/2019/07/background-loja.jpg");
     z-index: 0;
     position: relative;
@@ -404,6 +409,9 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
       .torres-digita-logo img { top: -56px; position: relative; margin: 0 auto; }
       .torres-digita-logo { margin: 0 auto 12px; height: 200px; }
 
+      /*Woocommerce*/
+            .woocommerce .products ul, .woocommerce ul.products { display: flex; }
+        #content .products.columns-3 .product { width: auto !important; margin: 0 auto; }
 }
 
     @media only screen and (max-width : 768px) {
