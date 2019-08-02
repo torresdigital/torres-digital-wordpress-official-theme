@@ -76,13 +76,7 @@ function register_my_menus() {
 }
 add_action( 'init', 'register_my_menus' );
 
-/**
-Once you've done that, your theme will be almost ready. The last preparation step is to tell the theme where you want the menus to show up. You do this in the relevant theme file. So, for example, we might want our header menu to be in header.php. So open up that file in the theme editor, and decide where you want to put your menu. The code to use here is wp_nav_menu which we will need once for each menu location. So, add this code -
-
-        Display Menus on Theme
-    <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
-
-    */
+/**Filters excerpt  */
 
 add_filter('excerpt_length', 'my_excerpt_length');
 /*
