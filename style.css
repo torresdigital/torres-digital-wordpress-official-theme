@@ -393,7 +393,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
 
          .navbar-toggle {display: initial !important}
-       .login_cart_wrap.col-md-3.col-xs-12 {width: 100%; padding: 0 10px}
+       .login_cart_wrap.col-md-3.col-xs-12 {width: auto; padding: 0 10px}
         .col-md-push-2 { left: initial; float: initial; width: 100%;  }
 
 
@@ -438,12 +438,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
         .col-md-push-2 { left: initial;float: initial;width: 100%;  }
         html .post-template-default .col-md-push-2 {width: auto;margin: 0 auto; padding: 0 15px}
-
-                .example-item {  max-width: 50%; }
-
-
-        */
-
+                .example-item {  max-width: 50%; } */
 
 
  }
