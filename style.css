@@ -393,7 +393,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
 
          .navbar-toggle {display: initial !important}
-       .login_cart_wrap.col-md-3.col-xs-12 {width: auto; padding: 0 10px}
+       .login_cart_wrap.col-md-3.col-xs-12 {width: auto; padding: 0 10px} #ql_nav_btn {width: 100%}
         .col-md-push-2 { left: initial; float: initial; width: 100%;  }
 
 
@@ -411,7 +411,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
         .content_background { padding: 40px 20px; }
           /*menu header*/
         .login_btn_wrap {float: left; font-weight: 600}
-        .ql_login-btn {font-weight: 600; border: translate; background: #A08240; border-radius: 30px; padding: 2px 15px; color: #fff; }
+        .ql_login-btn {font-weight: 600; border: none; background: #A08240; border-radius: 30px; padding: 2px 15px; color: #fff; }
         .ql_login-btn:hover {text-decoration: none;/*border-color: #a08240;*/ color: #fff;
 
             -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.55);
