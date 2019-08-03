@@ -163,7 +163,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     display: inline-block;
 }
 #menu-na-esquerda  .login_cart_wrap.col-md-3.col-xs-12 {margin: 0}
-#menu-na-esquerda .menu-top-menu-container ul > li > a {font-size: 14px; font-weight: 300; position: relative}
+#menu-na-esquerda .menu-top-menu-container ul > li > a {font-size: 14px; 400; position: relative}
 
 #jqueryslidemenu ul.nav > li > a, .sshos-horizontal-menu-inner a,
 .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a, #menu-na-esquerda ul > li > a {
@@ -266,6 +266,9 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
 .woocommerce form .form-row .input-checkbox, .woocommerce-page form .form-row .input-checkbox {position: relative}
 .woocommerce.single-product span.onsale, .woocommerce span.onsale {  border-radius: 0; background-color: #A08240; padding: 8px 30px;line-height: 12px;min-height: 20px; }
+
+#sudo-su .woocommerce .products .product .product_content { position: relative;top: 0;right: 0;left: 0;bottom: 0; }
+.products.columns-3 #sudo-su .woocommerce #main .products .product, .woocommerce-page .products .product {width: auto;}
 
 /*Footer*/
 #footer {
