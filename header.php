@@ -154,6 +154,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
     <div class="clearfix">
-                                <div id="torres-digital-background-head" class="torres-digital-background-head"></div>
-
-                </div>
+                                <div id="torres-digital-background-head" class="torres-digital-background-head"></div>                </div>
