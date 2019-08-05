@@ -31,7 +31,13 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 */
 
 /*Padrao*/
-* {box-sizing: border-box;} body *:focus { outline-offset: none;  outline: none } html body { background-color: #fff; -webkit-font-smoothing: auto;  -moz-font-smoothing: antialiased;} *, ::after, ::before {-webkit-box-sizing: border-box; box-sizing: border-box; -ms-word-wrap: break-word; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 {font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619 /*#000*/} html .comment-form-cookies-consent {width: auto; display: inline-flex;} h1 {font-size: 34px; } h2 {font-size: 31px; margin-bottom: 22px} h3 {font-size: 22px; margin-bottom: 22px} h4, h5 {font-size: 18px} p, a, span, body, .sshos-horizontal-menu-inner a, .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a { font-size: 14px; font-family: 'Inconsolata', monospace; font-weight: 400; color: #555; letter-spacing: 1px;} p {  line-height: 140% } /* Link e Zelda */ .padrao a { font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619; font-size: 15.5px; font-weight: 500; letter-spacing: 0 } input, textarea {  border: 2px solid #f4f4f4; } blockquote p {color: #A08240;} #contato {width: 95%} .titulo {margin: 30px auto; border-bottom: 2px solid #f4f4f4; } #content.col-md-12 {padding: 0} html .comment-form-cookies-consent input[type="checkbox"] {height: auto; margin: 0 auto; bottom: 2px;} #commentform #wp-comment-cookies-consent {width: auto;display: inline-flex;margin: 0 12px 0 auto;position: relative;} .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {width: 100%;margin: 0 auto;position: relative; font-size: 14px}
+* {box-sizing: border-box;} body *:focus { outline-offset: none;  outline: none } html body { background-color: #fff; -webkit-font-smoothing: auto;  -moz-font-smoothing: antialiased;} *, ::after, ::before {-webkit-box-sizing: border-box; box-sizing: border-box; -ms-word-wrap: break-word; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 {font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619 /*#000*/} html .comment-form-cookies-consent {width: auto; display: inline-flex;} h1 {font-size: 34px; } h2 {font-size: 31px; margin-bottom: 22px} h3 {font-size: 22px; margin-bottom: 22px} h4, h5 {font-size: 18px} p, a, span, body, .sshos-horizontal-menu-inner a, .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a { font-size: 14.5px; font-family: 'Inconsolata', monospace; font-weight: 400; color: #555; letter-spacing: 1px;} p {  line-height: 140% } /* Link e Zelda */ .padrao a, .parallax a { font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619; font-size: 15.5px; font-weight: 500; letter-spacing: 0 } input, textarea {  border: 2px solid #f4f4f4; } blockquote p {color: #A08240;} #contato {width: 95%} .titulo {margin: 30px auto; border-bottom: 2px solid #f4f4f4; } #content.col-md-12 {padding: 0} html .comment-form-cookies-consent input[type="checkbox"] {height: auto; margin: 0 auto; bottom: 2px;} #commentform #wp-comment-cookies-consent {width: auto;display: inline-flex;margin: 0 12px 0 auto;position: relative;} .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {width: 100%;margin: 0 auto;position: relative; font-size: 14px}
+
+#parallax {min-height: 300px;padding: 20px 0; background-image: url("/wp-content/uploads/2019/08/phones-background-ok.jpg")}
+
+#sudo-su .vc_parallax .vc_parallax-inner {background-size: 100%;}
+
+#parallax-titulo h2 {color: #fff;font-size: 55px;margin: 0 auto;position: relative;text-shadow: 0px 0px 6px rgba(204, 200, 156, 0.56);}
 
 .loop-carousel, #carrossel-modelos { overflow: hidden;}
 #carrossel-modelos  {
@@ -55,6 +61,8 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
 
 /*.archive.post-type-archive.post-type-archive-product.woocommerce.woocommerce-page.woocommerce-js.\%f0\%9f\%8c\%9ftorres-digital.ver2\.2\.0.wpb-js-composer.js-comp-ver-5\.7.vc_responsive.pace-done .torres-digital-background-head { background-image: url("/wp-content/uploads/2019/07/background-loja-v.2.jpg") !important;}
 .page-id-29 .torres-digital-background-head { background-image: url("/wp-content/uploads/2019/07/background-loja-v.2.jpg") !important;}*/
@@ -86,8 +94,9 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
   overflow-Y: scroll;}
 
 /* Content */
+#sudo-su .padrao {width: 100%; position: relative; display: inline-block; margin: 0 auto;}
 .content_background {
-    padding: 40px 10px;
+    padding: 40px 0;
     box-shadow: 0px -4px 35px -25px rgba(0, 0, 0, 0.31);
     margin-bottom: 60px;
 }
@@ -105,6 +114,10 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     -moz-box-shadow: 0px 0px 6px 5px rgba(204, 200, 156, 0.56);
     box-shadow: 0px 0px 6px 5px rgba(204, 200, 156, 0.56);
 }
+#sudo-su .xoo-wsc-icon-basket1::before { content: "\e74b"; }
+.xoo-wsc-icon-basket1 { font-family: 'ecommerce' !important; }
+.xoo-wsc-close { font-family: 'Woo-Side-Cart'; } .xoo-wsc-ecnt {font-size: 14px;text-align: center;}
+
 /*Head*/
 
 /*Woocommerce cart*/
@@ -128,7 +141,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 /*Menu*/
 .collapse {display: block}
 
-.ql_login-btn {text-transform: lowercase} .ql_login-btn {font-size: 14px; font-weight: 600; border: none; background: #FF3815; border-radius: 30px; padding: 1px 10px; color: #fff; } .login_btn_wrap {float: right;height: 30px;top: 4px;left: 0;display: inline-block;position: relative;}
+.ql_login-btn {text-transform: lowercase} .ql_login-btn {font-size: 12.4px; font-size: 0.775rem; font-weight: 600; border: none; background: #FF3815; border-radius: 30px; padding: 1px 10px; color: #fff; } .login_btn_wrap {float: right;height: 30px;top: 4px;left: 0;display: inline-block;position: relative;}
 
 
         .ql_login-btn:hover {text-decoration: none;/*border-color: #a08240;*/ color: #fff;
@@ -178,7 +191,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     display: inline-block;
 }
 #menu-na-esquerda  .login_cart_wrap.col-md-3.col-xs-12 {margin: 0}
-#menu-na-esquerda .menu-top-menu-container ul > li > a {font-size: 14px; 400; position: relative}
+#menu-na-esquerda .menu-top-menu-container ul > li > a {font-size: 14px; position: relative}
 
 #jqueryslidemenu ul.nav > li > a, .sshos-horizontal-menu-inner a,
 .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a, #menu-na-esquerda ul > li > a {
@@ -373,11 +386,18 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
  	}
 
 
-
     /*=====================================================
     =            Bootstrap 2.3.2 Media Queries            =
     =====================================================*/
-@media only screen and (max-width : 1280px) { p, a, span, body { font-size: 14px; }
+    @media only screen and (max-width : 1440px) {
+
+
+
+
+}
+
+
+    @media only screen and (max-width : 1280px) { p, a, span, body { font-size: 14px; }
         /*Home*/
         /*Blog*/
     .col-md-push-2 {width: 71%;}
