@@ -33,7 +33,11 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 /*Padrao*/
 * {box-sizing: border-box;} body *:focus { outline-offset: none;  outline: none } html body { background-color: #fff; -webkit-font-smoothing: auto;  -moz-font-smoothing: antialiased;} *, ::after, ::before {-webkit-box-sizing: border-box; box-sizing: border-box; -ms-word-wrap: break-word; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 {font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619 /*#000*/} html .comment-form-cookies-consent {width: auto; display: inline-flex;} h1 {font-size: 34px; } h2 {font-size: 31px; margin-bottom: 22px} h3 {font-size: 22px; margin-bottom: 22px} h4, h5 {font-size: 18px} p, a, span, body, .sshos-horizontal-menu-inner a, .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a { font-size: 14.5px; font-family: 'Inconsolata', monospace; font-weight: 400; color: #555; letter-spacing: 1px;} p {  line-height: 140% } /* Link e Zelda */ .padrao a, .parallax a { font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619; font-size: 15.5px; font-weight: 500; letter-spacing: 0 } input, textarea {  border: 2px solid #f4f4f4; } blockquote p {color: #A08240;} #contato {width: 95%} .titulo {margin: 30px auto; border-bottom: 2px solid #f4f4f4; } #content.col-md-12 {padding: 0} html .comment-form-cookies-consent input[type="checkbox"] {height: auto; margin: 0 auto; bottom: 2px;} #commentform #wp-comment-cookies-consent {width: auto;display: inline-flex;margin: 0 12px 0 auto;position: relative;} .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {width: 100%;margin: 0 auto;position: relative; font-size: 14px}
 
-#parallax {min-height: 300px;padding: 20px 0; background-image: url("/wp-content/uploads/2019/08/phones-background-ok.jpg")}
+#parallax {min-height: 300px;padding: 20px 0;
+    background-image: url("/wp-content/uploads/2019/08/phones-background-ok.jpg");
+    background-repeat: no-repeat;
+
+}
 
 #sudo-su .vc_parallax .vc_parallax-inner {background-size: 100%;}
 
