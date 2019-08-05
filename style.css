@@ -10,7 +10,7 @@ Theme URI: https://www.facebook.com/torresdigital/
 
     www.torresdigital.tk * Menos é mais.
 
-    Text Domain: torresdigital
+    Text Domain: torresdigital, woocommerce
     Template: shophistic-lite
     Version: 2.2.0 *//*
 
@@ -31,7 +31,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 */
 
 /*Padrao*/
-* {box-sizing: border-box;} body *:focus { outline-offset: none;  outline: none } body { background-color: #fff; -webkit-font-smoothing: antialiased;} *, ::after, ::before {-webkit-box-sizing: border-box; box-sizing: border-box; -ms-word-wrap: break-word; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 {font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619 /*#000*/} html .comment-form-cookies-consent {width: auto; display: inline-flex;} h1 {font-size: 34px; } h2 {font-size: 31px; margin-bottom: 22px} h3 {font-size: 22px; margin-bottom: 22px} h4, h5 {font-size: 18px} p, a, span, body, .sshos-horizontal-menu-inner a, .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a { font-size: 14px; font-family: 'Inconsolata', monospace; font-weight: 400; color: #555; letter-spacing: 1px;} p {  line-height: 140% } input, textarea {  border: 2px solid #f4f4f4; } blockquote p {color: #A08240;} #contato {width: 95%} .titulo {margin: 30px auto; border-bottom: 2px solid #f4f4f4; } #content.col-md-12 {padding: 0} html .comment-form-cookies-consent input[type="checkbox"] {height: auto; margin: 0 auto; bottom: 2px;} #commentform #wp-comment-cookies-consent {width: auto;display: inline-flex;margin: 0 12px 0 auto;position: relative;} .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {width: 100%;margin: 0 auto;position: relative; font-size: 14px}
+* {box-sizing: border-box;} body *:focus { outline-offset: none;  outline: none } body { background-color: #fff; -webkit-font-smoothing: auto;  -moz-font-smoothing: antialiased;} *, ::after, ::before {-webkit-box-sizing: border-box; box-sizing: border-box; -ms-word-wrap: break-word; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 {font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619 /*#000*/} html .comment-form-cookies-consent {width: auto; display: inline-flex;} h1 {font-size: 34px; } h2 {font-size: 31px; margin-bottom: 22px} h3 {font-size: 22px; margin-bottom: 22px} h4, h5 {font-size: 18px} p, a, span, body, .sshos-horizontal-menu-inner a, .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a { font-size: 14px; font-family: 'Inconsolata', monospace; font-weight: 400; color: #555; letter-spacing: 1px;} p {  line-height: 140% } /* Link e Zelda */ .padrao a { font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619; font-size: 14px; font-weight: 500; } input, textarea {  border: 2px solid #f4f4f4; } blockquote p {color: #A08240;} #contato {width: 95%} .titulo {margin: 30px auto; border-bottom: 2px solid #f4f4f4; } #content.col-md-12 {padding: 0} html .comment-form-cookies-consent input[type="checkbox"] {height: auto; margin: 0 auto; bottom: 2px;} #commentform #wp-comment-cookies-consent {width: auto;display: inline-flex;margin: 0 12px 0 auto;position: relative;} .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {width: 100%;margin: 0 auto;position: relative; font-size: 14px}
 
 .loop-carousel, #carrossel-modelos { overflow: hidden;}
 #carrossel-modelos  {
@@ -85,10 +85,11 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 #escolhe-tua-loja { scroll-behavior: smooth;
   overflow-Y: scroll;}
 
-/*Página de Post*/
+/* Content */
 .content_background {
     padding: 40px 10px;
     box-shadow: 0px -4px 35px -25px rgba(0, 0, 0, 0.31);
+    margin-bottom: 60px;
 }
 /*Página de Busca: resultado*/
 .no-content p {
@@ -126,7 +127,23 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 }
 /*Menu*/
 .collapse {display: block}
+
 .ql_login-btn {text-transform: lowercase}
+.ql_login-btn {font-weight: 600; border: none; background: #FF3815; border-radius: 30px; padding: 1px 10px; color: #fff; }
+.login_btn_wrap {float: right;height: 30px;top: 4px;left: 0;display: inline-block;position: relative;}
+
+
+        .ql_login-btn:hover {text-decoration: none;/*border-color: #a08240;*/ color: #fff;
+
+            -webkit-box-shadow: 0px 0px 6px 0px rgba(138, 138, 138, 0.55);
+            -moz-box-shadow: 0px 0px 6px 0px rgba(138, 138, 138, 0.55);
+            box-shadow: 0px 0px 6px 0px rgba(138, 138, 138, 0.55);
+
+            animation: shadow-pulse 1s infinite;cursor: pointer;box-shadow: 0 0 0 rgba(204,169,44, 0.4);
+        }
+
+.ql_login-btn:focus {color: #fff;text-decoration: unset;animation: shadow-pulse 1s infinite;cursor: pointer;box-shadow: 0 0 0 rgba(204,169,44, 0.4);} @keyframes shadow-pulse{0% {box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);}100% {box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);}}
+
 .ql_logo_nav.col-md-9.col-xs-12 {
   width: 100%;
   text-align: center;
@@ -269,6 +286,10 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
 #sudo-su .woocommerce .products .product .product_content { position: relative;top: 0;right: 0;left: 0;bottom: 0; }
 .products.columns-3 #sudo-su .woocommerce #main .products .product, .woocommerce-page .products .product {width: auto;}
+
+.woocommerce #respond input#submit,
+.woocommerce a.button, .woocommerce button.button,
+.woocommerce input.button {color: #fff;background-color: #FF3815;}
 
 /*Footer*/
 #footer {
@@ -422,12 +443,12 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
         .content_background { padding: 40px 20px; }
           /*menu header*/
         .login_btn_wrap {float: left; font-weight: 600}
-        .ql_login-btn {font-weight: 600; border: none; background: #A08240; border-radius: 30px; padding: 2px 15px; color: #fff; }
+        .ql_login-btn {font-weight: 600; border: none; background: #FF3815; border-radius: 30px; padding: 1px 10px; color: #fff; }
         .ql_login-btn:hover {text-decoration: none;/*border-color: #a08240;*/ color: #fff;
 
-            -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.55);
-            -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.55);
-            box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.55);
+            -webkit-box-shadow: 0px 0px 6px 0px rgba(138, 138, 138, 0.55);
+            -moz-box-shadow: 0px 0px 6px 0px rgba(138, 138, 138, 0.55);
+            box-shadow: 0px 0px 6px 0px rgba(138, 138, 138, 0.55);
         }
 
 
