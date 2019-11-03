@@ -41,7 +41,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     max-width: 98%;
     display: block;
     float: initial;
-    margin: 0 auto;
+    margin: 10px auto;
     }
 
  .parallax {
@@ -207,6 +207,9 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     margin: 20px auto 0;
     position: relative;
 }
+#menu-na-esquerda .page_item.page-item-7, #menu-na-esquerda .page_item.page-item-35, #menu-na-esquerda .page_item.page-item-23,
+#menu-na-esquerda .page_item.page-item-29, #menu-na-esquerda .page_item.page-item-16, #menu-na-esquerda .page_item.page-item-26, #menu-na-esquerda .page_item.page-item-17, #menu-na-esquerda .page_item.page-item-26,  { display: none; }
+
 #menu-na-esquerda ul > li {
     display: inline-block;
 }
@@ -409,20 +412,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     /*=====================================================
     =            Bootstrap 2.3.2 Media Queries            =
     =====================================================*/
-    @media only screen and (max-width : 1440px) {
-
-        .vc_row.wpb_row.vc_row-fluid {
-
-    max-width: 90%;
-    display: block;
-    float: initial;
-    margin: 0 auto;
-    }
-
-
-
-
-}
+    @media only screen and (max-width : 1440px) { }
 
 
     @media only screen and (max-width : 1280px) { p, a, span, body { font-size: 14px; }
