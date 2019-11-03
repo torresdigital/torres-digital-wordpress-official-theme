@@ -57,8 +57,29 @@ function my_excerpt_length($length) {
     return 110;
 }
 
-add_filter('excerpt_length', 'my_excerpt_length');
+/**
+Once you've done that, your theme will be almost ready. The last preparation step is to tell the theme where you want the menus to show up. You do this in the relevant theme file. So, for example, we might want our header menu to be in header.php. So open up that file in the theme editor, and decide where you want to put your menu. The code to use here is wp_nav_menu which we will need once for each menu location. So, add this code -
 
+        Display Menus on Theme
+    <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+
+    */
+
+function register_my_menus() {
+    register_nav_menus(
+        array(
+            'header-menu' => __( 'Header Menu' ),
+            'top-menu' => __( 'Top Menu' ),
+            'extra-menu' => __( 'Extra Menu' )
+        )
+    );
+}
+add_action( 'init', 'register_my_menus' );
+
+/**Filters excerpt  */
+
+add_filter('excerpt_length', 'my_excerpt_length');
+/*
 function mytheme_add_woocommerce_support() {
 	add_theme_support( 'woocommerce', array(
 		'thumbnail_image_width' => 600,
@@ -130,8 +151,8 @@ function enqueue_parent_styles() {
 
 /* registrando scripts *
 add_action("wp_enqueue_scripts", "scripts");
-function myscripts() { 
-    wp_register_script('tdwct', 
+function myscripts() {
+    wp_register_script('tdwct',
                         get_template_directory_uri() .'/js/scripts.js',   //
                         array ('jquery', 'jquery-ui'),                  //depends on these, however, they are registered by core already, so no need to enqueue them.
                         false, false);
@@ -147,10 +168,10 @@ function myscripts() {
 function my_enqueue_scripts()
 {
     wp_register_script( 'first', get_template_directory_uri() . 'js/first.js' );
- 
+
     wp_enqueue_script( 'second', get_template_directory_uri() . 'js/second.js', array( 'first' ) );
 }
-add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' ); 
+add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );
 
 */
 
@@ -163,11 +184,11 @@ add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );
 
 function myscripts() {
     //get some external script that is needed for this script
-    wp_enqueue_script('jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js'); 
+    wp_enqueue_script('jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js');
     $script = get_template_directory_uri() . '/library/myscript.js';
-    wp_register_script('myfirstscript', 
-                        $script, 
-                        array ('jquery', 'jquery-ui'), 
+    wp_register_script('myfirstscript',
+                        $script,
+                        array ('jquery', 'jquery-ui'),
                         false, false);
     //always enqueue the script after registering or nothing will happen
     wp_enqueue_script('fullpage-slimscroll');
@@ -180,7 +201,7 @@ add_action("wp_enqueue_scripts", "myscripts");
     */
     add_filter( 'login_headerurl', 'xs_login_headerurl' );
     function xs_login_headerurl( $url ) {
-    return esc_url(  'https://www.torresdigital.tk.'  );
+    return esc_url(  '/'  );
     }
     add_filter( 'login_headertitle', 'xs_login_headertitle' );
     function xs_login_headertitle( $title ) {
@@ -229,6 +250,8 @@ add_action("wp_enqueue_scripts", "myscripts");
     }
 
     new iWC_Orderby_Stock_Status;
+
+
 
 
     /*
@@ -280,8 +303,8 @@ add_action("wp_enqueue_scripts", "myscripts");
     ) );
 
 
-    function my_login_logo_one() {  ?> 
-        <style type="text/css"> 
+    function my_login_logo_one() {  ?>
+        <style type="text/css">
         body.login div#login h1 a {
             background-image: url(/wp-content/uploads/2018/10/logo-sites-torresdigital.png);
             background-size: 70%;
@@ -292,5 +315,5 @@ add_action("wp_enqueue_scripts", "myscripts");
             margin: 0 auto;
             left: 17px;
                                     }
-        </style> 
+        </style>
     <?php  } add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
