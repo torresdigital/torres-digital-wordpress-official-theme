@@ -207,8 +207,9 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     margin: 20px auto 0;
     position: relative;
 }
+/* Desapear*//*
 #menu-na-esquerda .page_item.page-item-7, #menu-na-esquerda .page_item.page-item-35, #menu-na-esquerda .page_item.page-item-23,
-#menu-na-esquerda .page_item.page-item-29, #menu-na-esquerda .page_item.page-item-16, #menu-na-esquerda .page_item.page-item-26, #menu-na-esquerda .page_item.page-item-17, #menu-na-esquerda .page_item.page-item-26  { display: none; }
+#menu-na-esquerda .page_item.page-item-29, #menu-na-esquerda .page_item.page-item-16, #menu-na-esquerda .page_item.page-item-26, #menu-na-esquerda .page_item.page-item-17, #menu-na-esquerda .page_item.page-item-26, #menu-na-esquerda .page_item.page-item-9, #menu-na-esquerda .page_item.page-item-3  { display: none; } */
 
 #menu-na-esquerda ul > li {
     display: inline-block;
