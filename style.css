@@ -283,6 +283,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 .blog article {max-width: 45%;display: inline-block;margin: 0 20px;padding: 0 10px;}
 .col-md-10 {width: 56.333%;}.col-md-push-2 {left: initial;float: left;width: 75.000%;}
 
+/*Sidebar*/
 #sidebar {
   float: initial;
   margin: 0 10px;
@@ -300,9 +301,23 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     margin: 0 5px;
     padding: 0 10px;
 }
-
+#sidebar .widget > ul li > a {
+    color: #777777;
+    padding: 0.63636364em 0;
+    display: block;
+    font-weight: normal;
+    -webkit-transition: all 200ms;
+    -o-transition: all 200ms;
+    transition: all 200ms;
+    font-size: 15.5px;
+    line-height: 1.3em;
+    letter-spacing: 0;
+}
 /*Pages*/
-.page-title {letter-spacing: 7px; padding: 0 10px}
+.page-title {letter-spacing: 7px; padding: 0 10px,  width: auto;
+    margin-left: 1em;
+    text-transform: capitalize;}
+
 
 #center-sudo-su-- { margin-bottom: 50px; }
 /*Post*/
