@@ -242,7 +242,8 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     color: #a08240 !important;
     background-color: transparent;
 }
-.current-menu-item a  { color: #A08240 !important}
+.current-menu-item a  { color: #fff /*#A08240*/ !important; font-weight: 600; border: none; background:#FF3815; border-radius: 30px; padding: 1px 10px;}
+
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
     color: #A08240;}
 /*Mobile Menu*/
@@ -416,7 +417,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     @media only screen and (max-width : 1440px) { }
 
 
-    @media only screen and (max-width : 1280px) { p, a, span, body { font-size: 14px; }
+    @media only screen and (max-width : 1280px) { p, a, span, body { font-size: 15px; }
         /*Home*/
         /*Blog*/
     .col-md-push-2 {width: 71%;}
