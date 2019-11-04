@@ -314,9 +314,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     letter-spacing: 0;
 }
 /*Pages*/
-.page-title {letter-spacing: 7px; padding: 0 10px,  width: auto;
-    margin-left: 1em;
-    text-transform: capitalize;}
+.page-title {letter-spacing: 7px; padding: 0 10px;  width: auto; margin-left: 1em; text-transform: capitalize;}
 
 
 #center-sudo-su-- { margin-bottom: 50px; }
