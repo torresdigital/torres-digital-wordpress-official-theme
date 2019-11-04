@@ -233,7 +233,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     display: inline-block;
 }
 #menu-na-esquerda  .login_cart_wrap.col-md-3.col-xs-12 {margin: 0}
-#menu-na-esquerda .menu-top-menu-container ul > li > a {font-size: 14px; position: relative}
+#menu-na-esquerda .menu-top-menu-container ul > li > a {font-size: 14.5px; position: relative}
 
 #jqueryslidemenu ul.nav > li > a, .sshos-horizontal-menu-inner a,
 .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a, #menu-na-esquerda ul > li > a {
