@@ -87,7 +87,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
 #sudo-su .torres-digital-background-head {
     height: 250px;
-    background-image: url("/wp-content/uploads/2019/07/background-loja.jpg");
+    background-image: url("/wp-content/uploads/2019/11/background-loja.jpg");
     z-index: 0;
     position: relative;
     background-attachment: fixed;
@@ -160,6 +160,20 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 }
 /*Menu*/
 .collapse {display: block}
+
+#jqueryslidemenu ul.nav > li > ul {
+    top: 100%;
+    padding: 0;
+    border: 0px;
+    border-radius: 30px;
+    color: #333;
+}
+
+
+#jqueryslidemenu ul.nav > li > ul > li a:hover {
+    background-color: red;
+    border-radius: 30px;
+}
 
 .ql_login-btn {text-transform: lowercase} .ql_login-btn {font-size: 12.4px; font-size: 0.775rem; font-weight: 600; border: none; background: #FF3815; border-radius: 30px; padding: 1px 10px; color: #fff; } .login_btn_wrap {float: right;height: 30px;top: 4px;left: 0;display: inline-block;position: relative;}
 
