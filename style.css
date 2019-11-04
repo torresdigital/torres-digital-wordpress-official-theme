@@ -445,10 +445,8 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
 
 }
-    @media only screen and (max-width : 992px) {
 
-                .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a {margin: 9px 0 0;}
-}
+    @media only screen and (max-width : 992px) { .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a {margin: 9px 0 0;} /*End*/ }
 
     @media only screen and (max-width : 979px) {
 
