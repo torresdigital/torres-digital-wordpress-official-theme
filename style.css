@@ -171,11 +171,12 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
 
 #jqueryslidemenu ul.nav > li > ul > li a:hover {
-    background-color: red;
+    background-color: #ff3815;
     border-radius: 30px;
+    color: #fff;
 }
 
-.ql_login-btn {text-transform: lowercase} .ql_login-btn {font-size: 12.4px; font-size: 0.775rem; font-weight: 600; border: none; background: #FF3815; border-radius: 30px; padding: 1px 10px; color: #fff; } .login_btn_wrap {float: right;height: 30px;top: 4px;left: 0;display: inline-block;position: relative;}
+.ql_login-btn {text-transform: lowercase} .ql_login-btn { font-size: 12.4px; font-size: 0.775rem; font-weight: 600; border: none; background: #FF3815; border-radius: 30px; padding: 1px 10px; color: #fff; } .login_btn_wrap {float: right;height: 30px;top: 4px;left: 0;display: inline-block;position: relative;}
 
 
         .ql_login-btn:hover {text-decoration: none;/*border-color: #a08240;*/ color: #fff;
@@ -250,16 +251,13 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     background-color: #C6AF7C;
     color: #fff !important;
 }
-#jqueryslidemenu ul.nav > li > a:hover,
-.sshos-horizontal-menu-inner a:hover,
-.sshos-dropdown-menu-wrapper li a:hover  {
-    color: #a08240 !important;
+#jqueryslidemenu ul.nav > li > a:hover, .sshos-horizontal-menu-inner a:hover, .sshos-dropdown-menu-wrapper li a:hover  {  color: #555 !important;
     background-color: transparent;
 }
-.current-menu-item a  { color: #fff /*#A08240*/ !important; font-weight: 600; border: none; background:#FF3815; border-radius: 30px; padding: 1px 10px;}
+.current-menu-item a { color: #fff /*#A08240*/ !important; font-weight: 600; border: none; background:#FF3815; border-radius: 30px; padding: 1px 10px;} .current-menu-item a:hover { color: #555 /*#A08240*/ }
 
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
-    color: #A08240;}
+    color: #555;}
 /*Mobile Menu*/
 
 #ql_nav_btn {
