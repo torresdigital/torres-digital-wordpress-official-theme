@@ -243,14 +243,9 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     font-weight: 600;
     text-transform: lowercase;
 }
-.nav > li > a:hover, .nav > li > a:focus,
-.sshos-horizontal-menu-inner a:focus,
-.sshos-dropdown-menu-wrapper li a:focus,
-#menu-na-esquerda .menu-top-menu-container ul > li > a:focus {
-    text-decoration: none;
-    background-color: #C6AF7C;
-    color: #fff !important;
-}
+.nav > li > a:hover, .nav > li > a:focus, .sshos-horizontal-menu-inner a:focus, .sshos-dropdown-menu-wrapper li a:focus,
+#menu-na-esquerda .menu-top-menu-container ul > li > a:focus { text-decoration: none; background-color: #C6AF7C; color: #fff !important; border-radius: 30px; }
+
 #jqueryslidemenu ul.nav > li > a:hover, .sshos-horizontal-menu-inner a:hover, .sshos-dropdown-menu-wrapper li a:hover  {  color: #555 !important;
     background-color: transparent;
 }
