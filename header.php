@@ -114,7 +114,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                         <div id="torres-digita-logo" class="torres-digita-logo">
                             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-                                <img src="/wp-content/themes/torresdigital/img/logo.jpg" alt="Logo" width="138" height="156" />
+                                <img src="/wp-content/themes/torres-digital-wordpress-official-theme-master/img/logo22019.jpg" alt="Logo" width="138" height="156" />
                             </a>
                         </div>
 
