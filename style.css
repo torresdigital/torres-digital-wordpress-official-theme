@@ -90,7 +90,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
 #sudo-su .torres-digital-background-head {
     height: 250px;
-    background-image: url("/wp-content/uploads/2020/07/background-loja.jpg");
+    background-image: url("/wp-content/uploads/2020/07/background-loja.jpg") !important;
     z-index: 0;
     position: relative;
     background-attachment: fixed;
