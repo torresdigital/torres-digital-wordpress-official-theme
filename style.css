@@ -73,7 +73,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
 #torres-digital-background-head {
     height: 200px;
-    background-image: url("/wp-content/themes/torresdigital/img/head/wordpress-community-2.jpg");
+    background-image: url("/wp-content/themes/torres-digital-wordpress-official-theme-master/img/head/wordpress-community-2.jpg");
     z-index: 0;
     position: relative;
     background-attachment: fixed;
@@ -1006,28 +1006,28 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: 1em; text-t
 
 @font-face {
 	font-family: 'Futura PT';
-	src: url("/wp-content/themes/torresdigital/fonts/FuturaPT-Demi.woff2") format("woff2"), url("/wp-content/themes/torresdigital/fonts/FuturaPT-Demi.woff") format("woff");
+	src: url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/FuturaPT-Demi.woff2") format("woff2"), url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/FuturaPT-Demi.woff") format("woff");
 	font-weight: 600;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Futura PT';
-	src: url("/wp-content/themes/torresdigital/fonts/FuturaPT-Medium.woff2") format("woff2"), url("/wp-content/themes/torresdigital/fonts/FuturaPT-Medium.woff") format("woff");
+	src: url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/FuturaPT-Medium.woff2") format("woff2"), url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/FuturaPT-Medium.woff") format("woff");
 	font-weight: 500;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Futura PT';
-	src: url("/wp-content/themes/torresdigital/fonts/FuturaPT-BookObl.woff2") format("woff2"), url("/wp-content/themes/torresdigital/fonts/fonts/FuturaPT-BookObl.woff") format("woff");
+	src: url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/FuturaPT-BookObl.woff2") format("woff2"), url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/fonts/FuturaPT-BookObl.woff") format("woff");
 	font-weight: normal;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: 'Futura PT';
-	src: url("/wp-content/themes/torresdigital/fonts/FuturaPT-Book.woff2") format("woff2"), url("/wp-content/themes/torresdigital/fonts/fonts/FuturaPT-Book.woff") format("woff");
+	src: url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/FuturaPT-Book.woff2") format("woff2"), url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/fonts/FuturaPT-Book.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
 }
