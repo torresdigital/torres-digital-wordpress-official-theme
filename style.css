@@ -246,7 +246,7 @@ p::first-letter {
     font-size: 0.9375rem;
     padding: 1px 8px;
     margin: 9px 8px 0;
-    color: #555;
+    color: #161619 /*#555*/;
     font-weight: 600;
     text-transform: lowercase;
 }
