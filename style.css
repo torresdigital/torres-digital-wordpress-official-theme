@@ -36,7 +36,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 /* p */ p, blockquote a { font-size: 16px; line-height: 140%; font-weight: 500; color: #5e5555; letter-spacing: 0; } /* Link e Zelda */ .padrao a, .parallax a { font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619; font-size: 15.5px; font-weight: 500; letter-spacing: 0 } input, textarea { border: 2px solid #f4f4f4; } blockquote p, blockquote a { color: #A08240; } /*blockquote a:hover { font-weight: 600; } */ blockquote a:hover, blockquote a:focus {background-color:#ff3815;border-radius: 30px;color:#fff;font-weight: 400 !important;font-size: 14px;padding: 2px 9px;text-decoration: none;}
 p::first-letter {
   font-size: 200%;
-  color: #161619;
+  color: #8A2BE2;
 }
 
 
