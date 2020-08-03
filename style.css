@@ -30,6 +30,14 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     font-size: 16px;font-family: 'Inconsolata', monospace;font-weight: 400;color: #555;line-height: 140%;letter-spacing: 1px;
 */
 
+/*Extras*/
+#menu-item-84 a {
+  padding: 0 !important;
+  width: auto;
+  display: inline;
+  border-radius: 100%;
+}
+
 /*Padrao*/
 * {box-sizing: border-box;} body *:focus { outline-offset: none;  outline: none } html body { background-color: #fff; -webkit-font-smoothing: auto;  -moz-font-smoothing: antialiased;} *, ::after, ::before {-webkit-box-sizing: border-box; box-sizing: border-box; -ms-word-wrap: break-word; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 {font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619 /*#000*/} html .comment-form-cookies-consent {width: auto; display: inline-flex;} h1 {font-size: 34px; } h2 {font-size: 31px; margin-bottom: 22px} h3 {font-size: 22px; margin-bottom: 22px} h4, h5 {font-size: 18px} p, a, span, body, .sshos-horizontal-menu-inner a, .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a { font-size: 14.5px; font-family: 'Inconsolata', monospace; font-weight: 400; color: #555; letter-spacing: 1px;}
 
