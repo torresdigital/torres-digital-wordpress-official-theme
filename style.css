@@ -31,7 +31,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 */
 
 /*Extras 1*/
-#menu-primary-2 #menu-item-84 ul > li > a {
+#menu-na-esquerda ul > li > a, #menu-item-84 a {
   padding: 0 !important;
   width: auto;
   display: inline;
