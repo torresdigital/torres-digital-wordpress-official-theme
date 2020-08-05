@@ -31,13 +31,13 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 */
 
 /*Extras 1*/
-#menu-item-84 a {
+#menu-primary-2 #menu-item-84 ul > li > a {
   padding: 0 !important;
   width: auto;
   display: inline;
   border-radius: 100%;
 
-  -webkit-box-shadow: 0px 0px 6px 0px rgba(253, 0, 0, 0.493);
+-webkit-box-shadow: 0px 0px 6px 0px rgba(253, 0, 0, 0.493);
 -moz-box-shadow: 0px 0px 6px 0px rgba(253, 0, 0, 0.55);
 box-shadow: 0px 0px 6px 0px rgba(253, 0,0, 0.55);
 animation: shadow-pulse 1s infinite;
