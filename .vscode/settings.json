@@ -12,3 +12,19 @@
       ]
   }
 
+
+  {
+    "vscode_custom_css.imports": [
+      "file:///C:/Users/Cyber%20Loko/.vscode/extensions/webrender.synthwave-x-fluoromachine-0.0.12/synthwave-x-fluoromachine.css"
+      ]
+  }
+
+
+  "vscode_custom_css.imports": [""],
+  "vscode_custom_css.policy": true,
+
+  "synthwave84.brightness": "0.45"
+
+
+
+  
