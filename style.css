@@ -47,9 +47,14 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 }
 
 /* form 7 */
-.wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {
+.wpcf7 input[type="text"]:hover, .wpcf7 input[type="email"]:hover, .wpcf7 textarea:hover {
   
   box-shadow: 1px 1px 8px rgba(111, 108, 108, 0.13);
+  border: 1px solid #eaeaea;
+}
+
+.wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {
+  
   border: 1px solid #eaeaea;
 }
 
@@ -513,7 +518,8 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: 1em; text-t
 
 
          .navbar-toggle {display: initial !important}
-       .login_cart_wrap.col-md-3.col-xs-12 {width: auto; padding: 0 10px} #ql_nav_btn {width: 100%}
+       #menu-na-esquerda .login_cart_wrap.col-md-3.col-xs-12 {width: 100%; padding: 0 10px} 
+       #ql_nav_btn {width: 100%}
         .col-md-push-2 { left: initial; float: initial; width: 100%;  }
 
 
