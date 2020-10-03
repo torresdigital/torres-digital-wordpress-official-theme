@@ -519,6 +519,7 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: 1em; text-t
 
          .navbar-toggle {display: initial !important}
       /*problema*/  .login_cart_wrap.col-md-3.col-xs-12 {width: 100%; padding: 10px;}
+      /*problema*/  .login_cart_wrap.col-md-3.col-xs-12 {width: 100%; padding: 0 10px;}
 
        #ql_nav_btn {width: 100%}
         .col-md-push-2 { left: initial; float: initial; width: 100%;  }
