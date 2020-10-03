@@ -20,7 +20,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: child theme, woocommerce.
 This theme, like WordPress, is licensed under the GPL. Use it to make something cool, have fun, and share what you’ve learned with others.  */
 
-/*All Begin*/
+/*All Begin */
 
 @import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700|Nunito:300,400,600,700,800,900|Open+Sans:300,400,600,700,800&display=swap');
 /*
@@ -518,7 +518,8 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: 1em; text-t
 
 
          .navbar-toggle {display: initial !important}
-       #menu-na-esquerda .login_cart_wrap.col-md-3.col-xs-12 {width: 100%; padding: 0 10px} 
+      /*problema*/  .login_cart_wrap.col-md-3.col-xs-12 {width: 100%; padding: 10px;}
+
        #ql_nav_btn {width: 100%}
         .col-md-push-2 { left: initial; float: initial; width: 100%;  }
 
@@ -584,6 +585,8 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: 1em; text-t
 
 
     @media only screen and (max-width : 320px) {
+        
+        #torres-digita-logo { top: -61px; }
 
 }
 
