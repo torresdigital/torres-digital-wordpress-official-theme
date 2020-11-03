@@ -30,7 +30,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
     font-size: 16px;font-family: 'Inconsolata', monospace;font-weight: 400;color: #555;line-height: 140%;letter-spacing: 1px;
 */
 
-/*Extras 1*/
+/*Extras 1*/ /*
  #menu-item-84 img.wp-smiley, #menu-item-84 img.emoji  {
 
   -webkit-box-shadow: 0px 0px 6px 0px rgba(253, 0, 0, 0.493);
@@ -44,7 +44,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
   display: inline;
   border-radius: 100%;
   cursor: pointer;
-}
+} */
 
 /* form 7 */
 .wpcf7 input[type="text"]:hover, .wpcf7 input[type="email"]:hover, .wpcf7 textarea:hover {
