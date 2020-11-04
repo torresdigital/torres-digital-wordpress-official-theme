@@ -48,13 +48,13 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
 /* form 7 */
 .wpcf7 input[type="text"]:hover, .wpcf7 input[type="email"]:hover, .wpcf7 textarea:hover {
-  
+
   box-shadow: 1px 1px 8px rgba(111, 108, 108, 0.13);
   border: 1px solid #eaeaea;
 }
 
 .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {
-  
+
   border: 1px solid #eaeaea;
 }
 
@@ -63,15 +63,16 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
 *, ::after, ::before {-webkit-box-sizing: border-box; box-sizing: border-box; -ms-word-wrap: break-word; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 {font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619 /*#000*/} html .comment-form-cookies-consent {width: auto; display: inline-flex;} h1 {font-size: 34px; } h2 {font-size: 31px; margin-bottom: 22px} h3 {font-size: 22px; margin-bottom: 22px} h4, h5 {font-size: 18px} p, a, span, body, .sshos-horizontal-menu-inner a, .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a { font-size: 14.5px; font-family: 'Inconsolata', monospace; font-weight: 400; color: #555; letter-spacing: 1px;}
 
-/* p */ p, blockquote a { font-size: 16px; line-height: 140%; font-weight: 500; color: #5e5555; letter-spacing: 0; /*Smooting*/  -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; } /* Link e Zelda */ .padrao a, .parallax a { font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619; font-size: 15.5px; font-weight: 500; letter-spacing: 0; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased;} input, textarea { border: 2px solid #f4f4f4; } blockquote p, blockquote a { color: #A08240; } /*blockquote a:hover { font-weight: 600; } */ blockquote a:hover, blockquote a:focus {background-color:#ff3815;border-radius: 30px;color:#fff;font-weight: 400 !important;font-size: 14px;padding: 2px 9px;text-decoration: none;}
-p::first-letter {
-  font-size: 200%;
+/* p */ p, blockquote a { font-size: 16px; line-height: 1.5; font-weight: 500; color: #5e5555; letter-spacing: 0; /*Smooting*/  -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; /*ATENÇÃO*/ font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"} /* Link e Zelda */ .padrao a, .parallax a { font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619; font-size: 15.5px; font-weight: 500; letter-spacing: 0; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased;} input, textarea { border: 2px solid #f4f4f4; } blockquote p, blockquote a { color: #A08240; } /*blockquote a:hover { font-weight: 600; } */ blockquote a:hover, blockquote a:focus {background-color:#ff3815;border-radius: 30px;color:#fff;font-weight: 400 !important;font-size: 14px;padding: 2px 9px;text-decoration: none;}
+
+/*.entry p::first-letter */ .entry p:first-of-type::first-letter {
+  font-size: 200% ;
   color: #161619;
   font-weight: 600;
 }
 
 
-#contato {width: 95%} html .titulo {margin: 30px auto; border-bottom: 2px solid #f4f4f4; } #content.col-md-12 {padding: 0} html .comment-form-cookies-consent input[type="checkbox"] {height: auto; margin: 0 auto; bottom: 2px;} #commentform #wp-comment-cookies-consent {width: auto;display: inline-flex;margin: 0 12px 0 auto;position: relative;} .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {width: 100%;margin: 0 auto;position: relative; font-size: 14px}
+#contato {width: 95%} html .titulo {margin: 30px auto; border-bottom: 2px solid #f4f4f4; } #content.col-md-12 {padding: 0} html .comment-form-cookies-consent input[type="checkbox"] {height: auto; margin: 0 auto; bottom: 2px;} #commentform #wp-comment-cookies-consent {width: auto;display: inline-flex;margin: 0 12px 0 auto;position: .pace-done #content, .no-js #contentrelative;} .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {width: 100%;margin: 0 auto;position: relative; font-size: 14px}
 
  /*Correçao de Layout da Builder*/
 .vc_row.wpb_row.vc_row-fluid {
@@ -108,7 +109,7 @@ p::first-letter {
 
 #torres-digital-background-head {
     height: 200px;
-    background-image: url("/wp-content/themes/torres-digital-wordpress-official-theme-master/img/head/wordpress-community-2.jpg");
+    background-image: url("/wp-content/themes/torres-digital-wordpress-official-theme-master/img/head/head.jpg");
     z-index: 0;
     position: relative;
     background-attachment: fixed;
@@ -125,7 +126,7 @@ p::first-letter {
 
 #sudo-su .torres-digital-background-head {
     height: 250px;
-    background-image: url("/wp-content/uploads/2020/07/background-loja.jpg") !important;
+    background-image: url("/wp-content/themes/torres-digital-wordpress-official-theme-master/img/head/head.jpg");
     z-index: 0;
     position: relative;
     background-attachment: fixed;
@@ -477,7 +478,7 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: 1em; text-t
 
     @media only screen and (max-width : 1280px) {
       
-      p, a, span, body { font-size: 15px; }
+      /*p, a, span, body { font-size: 15px; }
         /*Home*/
         /*Blog*/
     .col-md-push-2 {width: 71%;}
@@ -1066,7 +1067,7 @@ top: -70px; }
 @font-face {
 	font-family: 'Futura PT';
 	src: url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/FuturaPT-BookObl.woff2") format("woff2"), url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/fonts/FuturaPT-BookObl.woff") format("woff");
-	font-weight: normal;
+	font-weight: normal;-
 	font-style: italic;
 }
 

@@ -78,7 +78,7 @@ add_action( 'init', 'register_my_menus' );
 
 /**Filters excerpt  */
 
-add_filter('excerpt_length', 'my_excerpt_length');
+/*add_filter('excerpt_length', 'my_excerpt_length');
 /*
 function mytheme_add_woocommerce_support() {
 	add_theme_support( 'woocommerce', array(
