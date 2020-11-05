@@ -54,7 +54,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 }
 
 .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {
-
+  
   border: 1px solid #eaeaea;
 }
 
@@ -276,7 +276,7 @@ html #jqueryslidemenu ul.nav > li > a, .sshos-horizontal-menu-inner a,
     text-decoration: none;
     font-size: 15px;
     font-size: 0.9375rem;
-    padding: 1px 8px;
+    padding: 0 8px;
     margin: 9px 8px 0;
     color: #161619 /*#555*/;
     font-weight: 600;
