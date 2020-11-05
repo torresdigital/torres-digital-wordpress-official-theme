@@ -62,7 +62,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 
 /* p */ p, blockquote a { font-size: 16px; line-height: 1.5; font-weight: 500; color: #000/*#5e5555*/; letter-spacing: 0; /*Smooting*/  -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; /*ATENÇÃO*/ font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"} /* Link e Zelda */ .padrao a, .parallax a { font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619; font-size: 15.5px; font-weight: 500; letter-spacing: 0; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased;} 
 
-.inconsolata p, .inconsolata blockquote a {font-family: 'Inconsolata', monospace}
+.inconsolata p, .inconsolata blockquote a {font-family: 'Inconsolata', monospace, font-size: 14.5px}
 
 input, textarea { border: 2px solid #f4f4f4; } blockquote p, blockquote a { color: #A08240; } 
 
