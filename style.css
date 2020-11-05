@@ -53,19 +53,22 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
   border: 1px solid #eaeaea;
 }
 
-.wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {
-  
-  border: 1px solid #eaeaea;
-}
+.wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea { border: 1px solid #eaeaea; }
 
 /*Padrao*/
 * {box-sizing: border-box; } body *:focus { outline-offset: none;  outline: none } html body { background-color: #fff; -moz-osx-font-smoothing: antialiased; -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased;} 
 
 *, ::after, ::before {-webkit-box-sizing: border-box; box-sizing: border-box; -ms-word-wrap: break-word; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 {font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619 /*#000*/} html .comment-form-cookies-consent {width: auto; display: inline-flex;} h1 {font-size: 34px; } h2 {font-size: 31px; margin-bottom: 22px} h3 {font-size: 22px; margin-bottom: 22px} h4, h5 {font-size: 18px} p, a, span, body, .sshos-horizontal-menu-inner a, .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a { font-size: 14.5px; font-family: 'Inconsolata', monospace; font-weight: 400; color: #555; letter-spacing: 1px;}
 
-/* p */ p, blockquote a { font-size: 16px; line-height: 1.5; font-weight: 500; color: #5e5555; letter-spacing: 0; /*Smooting*/  -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; /*ATENÇÃO*/ font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"} /* Link e Zelda */ .padrao a, .parallax a { font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619; font-size: 15.5px; font-weight: 500; letter-spacing: 0; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased;} input, textarea { border: 2px solid #f4f4f4; } blockquote p, blockquote a { color: #A08240; } /*blockquote a:hover { font-weight: 600; } */ blockquote a:hover, blockquote a:focus {background-color:#ff3815;border-radius: 30px;color:#fff;font-weight: 400 !important;font-size: 14px;padding: 2px 9px;text-decoration: none;}
+/* p */ p, blockquote a { font-size: 16px; line-height: 1.5; font-weight: 500; color: #000/*#5e5555*/; letter-spacing: 0; /*Smooting*/  -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; /*ATENÇÃO*/ font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"} /* Link e Zelda */ .padrao a, .parallax a { font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619; font-size: 15.5px; font-weight: 500; letter-spacing: 0; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased;} 
 
-/*.entry p::first-letter */ .entry p:first-of-type::first-letter {
+.inconsolata p, .inconsolata blockquote a {font-family: 'Inconsolata', monospace}
+
+input, textarea { border: 2px solid #f4f4f4; } blockquote p, blockquote a { color: #A08240; } 
+
+/*blockquote a:hover { font-weight: 600; } */ blockquote a:hover, blockquote a:focus {background-color:#ff3815;border-radius: 30px;color:#fff;font-weight: 400 !important;font-size: 14px;padding: 2px 9px;text-decoration: none;}
+
+/*.entry p::first-letter */ .blog .entry p:first-of-type::first-letter {
   font-size: 200% ;
   color: #161619;
   font-weight: 600;
