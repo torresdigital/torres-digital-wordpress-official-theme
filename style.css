@@ -53,10 +53,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
   border: 1px solid #eaeaea;
 }
 
-.wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {
-  
-  border: 1px solid #eaeaea;
-}
+.wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea { border: 1px solid #eaeaea; }
 
 /*Padrao*/
 * {box-sizing: border-box; } body *:focus { outline-offset: none;  outline: none } html body { background-color: #fff; -moz-osx-font-smoothing: antialiased; -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased;} 
