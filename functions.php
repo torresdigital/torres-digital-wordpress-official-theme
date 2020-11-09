@@ -268,13 +268,13 @@ add_action("wp_enqueue_scripts", "myscripts");
     new iWC_Orderby_Stock_Status;
 
 
-    // CUSTOM ADMIN MENU LINK FOR ALL SETTINGS
+// CUSTOM ADMIN MENU LINK FOR ALL SETTINGS
    function all_settings_link() {
     add_options_page(__('All Settings'), __('All Settings'), 'administrator', 'options.php');
    }
    add_action('admin_menu', 'all_settings_link');
 
-   // Carregando o jQuery a partir da CDN do Google
+// Carregando o jQuery a partir da CDN do Google
 
    // even more smart jquery inclusion :)
 add_action( 'init', 'jquery_register' );
