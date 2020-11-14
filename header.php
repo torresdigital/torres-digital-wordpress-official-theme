@@ -44,6 +44,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="https://kit.fontawesome.com/d292a654fc.js" crossorigin="anonymous"></script>
+
    <!-- WP_Head -->
     	<?php wp_head(); ?>
    <!-- /WP_Head -->
