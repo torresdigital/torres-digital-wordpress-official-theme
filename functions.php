@@ -148,6 +148,22 @@ function enqueue_parent_styles() {
    wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
 }
 
+// even more smart jquery inclusion :)
+add_action( 'init', 'jquery_register' );
+
+// register from google and for footer
+function jquery_register() {
+
+if ( !is_admin() ) {
+
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', ( 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' ), false, null, true );
+    wp_enqueue_script( 'jquery' );
+}
+}
+
+
+
 
 /* registrando scripts *
 add_action("wp_enqueue_scripts", "scripts");
@@ -251,6 +267,28 @@ add_action("wp_enqueue_scripts", "myscripts");
 
     new iWC_Orderby_Stock_Status;
 
+
+// CUSTOM ADMIN MENU LINK FOR ALL SETTINGS
+   function all_settings_link() {
+    add_options_page(__('All Settings'), __('All Settings'), 'administrator', 'options.php');
+   }
+   add_action('admin_menu', 'all_settings_link');
+
+// Carregando o jQuery a partir da CDN do Google
+
+   // even more smart jquery inclusion :)
+add_action( 'init', 'jquery_register' );
+
+// register from google and for footer
+function jquery_register() {
+
+if ( !is_admin() ) {
+
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', ( 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' ), false, null, true );
+    wp_enqueue_script( 'jquery' );
+}
+}
 
 
 
