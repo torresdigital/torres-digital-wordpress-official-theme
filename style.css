@@ -47,7 +47,7 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 } */
 
 /* form 7 */
-.wpcf7 input[type="text"]:hover, .wpcf7 input[type="email"]:hover, .wpcf7 textarea:hover { box-shadow: 1px 1px 8px rgba(111, 108, 108, 0.13);  border: 1px solid #eaeaea; } .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea { border: 1px solid #eaeaea; } .personnalite .messenger a {color: #fff }  
+.wpcf7 input[type="text"]:hover, .wpcf7 input[type="email"]:hover, .wpcf7 textarea:hover { box-shadow: 1px 1px 8px rgba(111, 108, 108, 0.13);  border: 1px solid #eaeaea; } .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea { border: 1px solid #eaeaea; } .personnalite { margin: 0px 0 45px 0 } .personnalite .messenger a {color: #fff }  
 
 .personnalite .messenger { width: 31%;padding: 5px 0;text-align: center;border-radius: 4%;
 
