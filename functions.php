@@ -76,26 +76,18 @@ function register_my_menus() {
 }
 add_action( 'init', 'register_my_menus' );
 
-/**Filters excerpt  */
 
-/*add_filter('excerpt_length', 'my_excerpt_length');
-/*
-function mytheme_add_woocommerce_support() {
-	add_theme_support( 'woocommerce', array(
-		'thumbnail_image_width' => 600,
-		'single_image_width'    => 600,
 
-        'product_grid'          => array(
-            'default_rows'    => 3,
-            'min_rows'        => 2,
-            'max_rows'        => 8,
-            'default_columns' => 4,
-            'min_columns'     => 2,
-            'max_columns'     => 5,
-        ),
-	) );
-}
-add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+
+
+/** REVISAR
+
+wp_enqueue_script( 'my-responive-menu', get_template_directory_uri() . '/js/bigSlide.min.js', array(), '20161214', true );
+
+**/
+
+
+
 
 /**
  * Generate breadcrumbs
@@ -121,6 +113,123 @@ function get_breadcrumb() {
         echo '</em>"';
     }
 }
+
+/**
+    * Change the login page icon and URL to our site instead of WordPress.org
+    */
+    add_filter( 'login_headerurl', 'xs_login_headerurl' );
+    function xs_login_headerurl( $url ) {
+    return esc_url(  '/'  );
+    }
+    add_filter( 'login_headertitle', 'xs_login_headertitle' );
+    function xs_login_headertitle( $title ) {
+    return get_bloginfo ( 'name' ) . ' – ' . get_bloginfo ( 'description' );
+    }
+
+
+/* Outros */
+
+ /** Font Awesome, by Torres Digital */
+  function theme_enqueue_styles() {
+    $parent_style = 'parent-style';
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'my-child-fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' );
+    wp_enqueue_style( 'child-style',
+        get_stylesheet_directory_uri() . '/style.css',
+        array( $parent_style )
+    );
+}
+    /**
+     * Order product collections by stock status, instock products first.
+     * https://stackoverflow.com/questions/25113581/show-out-of-stock-products-at-the-end-in-woocommerce
+     */
+    class iWC_Orderby_Stock_Status
+    {
+
+        public function __construct()
+        {
+            // Check if WooCommerce is active
+            if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
+                add_filter('posts_clauses', array($this, 'order_by_stock_status'), 2000);
+            }
+        }
+
+        public function order_by_stock_status($posts_clauses)
+        {
+            global $wpdb;
+            // only change query on WooCommerce loops
+            if (is_woocommerce() && (is_shop() || is_product_category() || is_product_tag())) {
+                $posts_clauses['join'] .= " INNER JOIN $wpdb->postmeta istockstatus ON ($wpdb->posts.ID = istockstatus.post_id) ";
+                $posts_clauses['orderby'] = " istockstatus.meta_value ASC, " . $posts_clauses['orderby'];
+                $posts_clauses['where'] = " AND istockstatus.meta_key = '_stock_status' AND istockstatus.meta_value <> '' " . $posts_clauses['where'];
+            }
+            return $posts_clauses;
+        }
+    }
+
+    new iWC_Orderby_Stock_Status;
+
+
+    // CUSTOM ADMIN MENU LINK FOR ALL SETTINGS
+   function all_settings_link() {
+    add_options_page(__('All Settings'), __('All Settings'), 'administrator', 'options.php');
+   }
+   add_action('admin_menu', 'all_settings_link');
+
+   // Carregando o jQuery a partir da CDN do Google
+
+   // even more smart jquery inclusion :)
+add_action( 'init', 'jquery_register' );
+
+// register from google and for footer
+function jquery_register() {
+
+if ( !is_admin() ) {
+
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', ( 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' ), false, null, true );
+    wp_enqueue_script( 'jquery' );
+                    }
+    }
+
+
+
+
+
+/**Filters excerpt  */
+
+/*add_filter('excerpt_length', 'my_excerpt_length');
+/*
+function mytheme_add_woocommerce_support() {
+	add_theme_support( 'woocommerce', array(
+		'thumbnail_image_width' => 600,
+		'single_image_width'    => 600,
+
+        'product_grid'          => array(
+            'default_rows'    => 3,
+            'min_rows'        => 2,
+            'max_rows'        => 8,
+            'default_columns' => 4,
+            'min_columns'     => 2,
+            'max_columns'     => 5,
+        ),
+	) );
+}
+add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /****
     * Chamando o Tema Pai * v2
     *
@@ -212,83 +321,6 @@ function myscripts() {
 }
 add_action("wp_enqueue_scripts", "myscripts");
 
-/**
-    * Change the login page icon and URL to our site instead of WordPress.org
-    */
-    add_filter( 'login_headerurl', 'xs_login_headerurl' );
-    function xs_login_headerurl( $url ) {
-    return esc_url(  '/'  );
-    }
-    add_filter( 'login_headertitle', 'xs_login_headertitle' );
-    function xs_login_headertitle( $title ) {
-    return get_bloginfo ( 'name' ) . ' – ' . get_bloginfo ( 'description' );
-    }
-
-
-/* Outros */
-
- /** Font Awesome, by Torres Digital */
-  function theme_enqueue_styles() {
-    $parent_style = 'parent-style';
-    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'my-child-fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' );
-    wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css',
-        array( $parent_style )
-    );
-}
-    /**
-     * Order product collections by stock status, instock products first.
-     * https://stackoverflow.com/questions/25113581/show-out-of-stock-products-at-the-end-in-woocommerce
-     */
-    class iWC_Orderby_Stock_Status
-    {
-
-        public function __construct()
-        {
-            // Check if WooCommerce is active
-            if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
-                add_filter('posts_clauses', array($this, 'order_by_stock_status'), 2000);
-            }
-        }
-
-        public function order_by_stock_status($posts_clauses)
-        {
-            global $wpdb;
-            // only change query on WooCommerce loops
-            if (is_woocommerce() && (is_shop() || is_product_category() || is_product_tag())) {
-                $posts_clauses['join'] .= " INNER JOIN $wpdb->postmeta istockstatus ON ($wpdb->posts.ID = istockstatus.post_id) ";
-                $posts_clauses['orderby'] = " istockstatus.meta_value ASC, " . $posts_clauses['orderby'];
-                $posts_clauses['where'] = " AND istockstatus.meta_key = '_stock_status' AND istockstatus.meta_value <> '' " . $posts_clauses['where'];
-            }
-            return $posts_clauses;
-        }
-    }
-
-    new iWC_Orderby_Stock_Status;
-
-
-// CUSTOM ADMIN MENU LINK FOR ALL SETTINGS
-   function all_settings_link() {
-    add_options_page(__('All Settings'), __('All Settings'), 'administrator', 'options.php');
-   }
-   add_action('admin_menu', 'all_settings_link');
-
-// Carregando o jQuery a partir da CDN do Google
-
-   // even more smart jquery inclusion :)
-add_action( 'init', 'jquery_register' );
-
-// register from google and for footer
-function jquery_register() {
-
-if ( !is_admin() ) {
-
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', ( 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' ), false, null, true );
-    wp_enqueue_script( 'jquery' );
-}
-}
 
 
 
@@ -354,4 +386,6 @@ if ( !is_admin() ) {
             left: 17px;
                                     }
         </style>
-    <?php  } add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
+    <?php  } add_action( 'login_enqueue_scripts', 'my_login_logo_one' ); */
+
+
