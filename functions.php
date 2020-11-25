@@ -193,6 +193,31 @@ if ( !is_admin() ) {
     }
 
 
+/*teste de custom post type*/
+// The custom function MUST be hooked to the init action hook
+add_action( 'init', 'lc_register_movie_post_type' );
+
+// A custom function that calls register_post_type
+function lc_register_movie_post_type() {
+
+  // Set various pieces of text, $labels is used inside the $args array
+  $labels = array(
+     'name' => _x( 'Movies', 'post type general name' ),
+     'singular_name' => _x( 'Movie', 'post type singular name' ),
+     ...
+  );
+
+  // Set various pieces of information about the post type
+  $args = array(
+    'labels' => $labels,
+    'description' => 'My custom post type',
+    'public' => true,
+    ...
+  );
+
+  // Register the movie post type with all the information contained in the $arguments array
+  register_post_type( 'movie', $args );
+}
 
 
 
@@ -216,19 +241,6 @@ function mytheme_add_woocommerce_support() {
 	) );
 }
 add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /****
     * Chamando o Tema Pai * v2
@@ -268,10 +280,8 @@ if ( !is_admin() ) {
     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', ( 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' ), false, null, true );
     wp_enqueue_script( 'jquery' );
-}
-}
-
-
+        }
+    }
 
 
 /* registrando scripts *
