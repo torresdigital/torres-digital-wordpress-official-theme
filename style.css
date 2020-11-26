@@ -650,8 +650,11 @@ top: -70px; }
     @media only screen and (max-width : 320px) {
         
         #torres-digita-logo { top: -61px; } #sudo-su .torres-digital-background-head { background-position-y: 238px;height: 134px; }
+        .torres-digita-logo img { top: 14px; } h1 { font-size: 29px;} .content_background {padding: 40px 0px;}
 
 }
+
+/* ############################ fim bootStrap ##################### */
 
     /*
       Based on:

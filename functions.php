@@ -1,4 +1,5 @@
-/* Theme Name: 🌟Torres Digital®
+<?php /* Theme Name: 🌟Torres Digital®
+
 Theme URI: https://www.facebook.com/torresdigital/
 
     Author: Torres Digital® | Sites → Lojas Virtuais e e-Commerce
@@ -10,1140 +11,391 @@ Theme URI: https://www.facebook.com/torresdigital/
 
     www.torresdigital.tk * Menos é mais.
 
-    Text Domain: torresdigital, woocommerce
-    Template: shophistic-lite
-    Version: 2.2.2020 *//*
+    Text Domain: torresdigital
+    Template: torresdigital
+    Version: 2.0 *//*
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Tags: child theme, woocommerce.
+Tags: child theme, woocommerce
+Text Domain: torresdigital
 This theme, like WordPress, is licensed under the GPL. Use it to make something cool, have fun, and share what you’ve learned with others.  */
 
-/*All Begin */
+/*All Begin*/
 
-@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700|Nunito:300,400,600,700,800,900|Open+Sans:300,400,600,700,800&display=swap');
+/****
+    * Chamando o Tema Pai * Quema Labs
+    */
+
+function child_shophistic_theme_enqueue_styles() {
+
+    //First we load Bootstrap from parent, then parent styles and then child styles
+    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css', array( 'bootstrap' ) );
+    wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'parent-style' ) );
+
+}
+add_action( 'wp_enqueue_scripts', 'child_shophistic_theme_enqueue_styles' );
+
+
+/****
+    * Chamando o Logo
+    ************************************/
+function themename_custom_logo_setup() {
+    $defaults = array(
+        'height' => 100,
+        'width' => 400,
+        'flex-height' => true,
+        'flex-width' => true,
+        'header-text' => array('site-title', 'site-description'),
+    );
+    add_theme_support('custom-logo', $defaults);
+}
+add_action('after_setup_theme', 'themename_custom_logo_setup');
+
+function my_excerpt_length($length) {
+    return 110;
+}
+
+/**
+Once you've done that, your theme will be almost ready. The last preparation step is to tell the theme where you want the menus to show up. You do this in the relevant theme file. So, for example, we might want our header menu to be in header.php. So open up that file in the theme editor, and decide where you want to put your menu. The code to use here is wp_nav_menu which we will need once for each menu location. So, add this code -
+
+        Display Menus on Theme
+    <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+
+    */
+
+function register_my_menus() {
+    register_nav_menus(
+        array(
+            'header-menu' => __( 'Header Menu' ),
+            'top-menu' => __( 'Top Menu' ),
+            'extra-menu' => __( 'Extra Menu' )
+        )
+    );
+}
+add_action( 'init', 'register_my_menus' );
+
+
+
+
+
+/** REVISAR
+
+wp_enqueue_script( 'my-responive-menu', get_template_directory_uri() . '/js/bigSlide.min.js', array(), '20161214', true );
+
+**/
+
+
+
+
+/**
+ * Generate breadcrumbs
+ * @author CodexWorld
+ * @authorURL www.codexworld.com
+ */
+function get_breadcrumb() {
+    echo ':: <a href="'.home_url().'" rel="nofollow">index</a> ::';
+    if (is_category() || is_single()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+        the_category(' &bull; ');
+            if (is_single()) {
+                echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
+                the_title();
+            }
+    } elseif (is_page()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+        echo the_title();
+    } elseif (is_search()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
+        echo '"<em>';
+        echo the_search_query();
+        echo '</em>"';
+    }
+}
+
+/**
+    * Change the login page icon and URL to our site instead of WordPress.org
+    */
+    add_filter( 'login_headerurl', 'xs_login_headerurl' );
+    function xs_login_headerurl( $url ) {
+    return esc_url(  '/'  );
+    }
+    add_filter( 'login_headertitle', 'xs_login_headertitle' );
+    function xs_login_headertitle( $title ) {
+    return get_bloginfo ( 'name' ) . ' – ' . get_bloginfo ( 'description' );
+    }
+
+
+/* Outros */
+
+ /** Font Awesome, by Torres Digital */
+  function theme_enqueue_styles() {
+    $parent_style = 'parent-style';
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'my-child-fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' );
+    wp_enqueue_style( 'child-style',
+        get_stylesheet_directory_uri() . '/style.css',
+        array( $parent_style )
+    );
+}
+    /**
+     * Order product collections by stock status, instock products first.
+     * https://stackoverflow.com/questions/25113581/show-out-of-stock-products-at-the-end-in-woocommerce
+     */
+    class iWC_Orderby_Stock_Status
+    {
+
+        public function __construct()
+        {
+            // Check if WooCommerce is active
+            if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
+                add_filter('posts_clauses', array($this, 'order_by_stock_status'), 2000);
+            }
+        }
+
+        public function order_by_stock_status($posts_clauses)
+        {
+            global $wpdb;
+            // only change query on WooCommerce loops
+            if (is_woocommerce() && (is_shop() || is_product_category() || is_product_tag())) {
+                $posts_clauses['join'] .= " INNER JOIN $wpdb->postmeta istockstatus ON ($wpdb->posts.ID = istockstatus.post_id) ";
+                $posts_clauses['orderby'] = " istockstatus.meta_value ASC, " . $posts_clauses['orderby'];
+                $posts_clauses['where'] = " AND istockstatus.meta_key = '_stock_status' AND istockstatus.meta_value <> '' " . $posts_clauses['where'];
+            }
+            return $posts_clauses;
+        }
+    }
+
+    new iWC_Orderby_Stock_Status;
+
+
+    // CUSTOM ADMIN MENU LINK FOR ALL SETTINGS
+   function all_settings_link() {
+    add_options_page(__('All Settings'), __('All Settings'), 'administrator', 'options.php');
+   }
+   add_action('admin_menu', 'all_settings_link');
+
+   // Carregando o jQuery a partir da CDN do Google
+
+   // even more smart jquery inclusion :)
+add_action( 'init', 'jquery_register' );
+
+// register from google and for footer
+function jquery_register() {
+
+if ( !is_admin() ) {
+
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', ( 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' ), false, null, true );
+    wp_enqueue_script( 'jquery' );
+                    }
+    }
+
+
+/*teste de custom post type*/
+// The custom function MUST be hooked to the init action hook
+add_action( 'init', 'lc_register_movie_post_type' );
+
+// A custom function that calls register_post_type
+function lc_register_movie_post_type() {
+
+  // Set various pieces of text, $labels is used inside the $args array
+  $labels = array(
+     'name' => _x( 'Movies', 'post type general name' ),
+     'singular_name' => _x( 'Movie', 'post type singular name' ),
+     ...
+  );
+
+  // Set various pieces of information about the post type
+  $args = array(
+    'labels' => $labels,
+    'description' => 'My custom post type',
+    'public' => true,
+    ...
+  );
+
+  // Register the movie post type with all the information contained in the $arguments array
+  register_post_type( 'movie', $args );
+}
+
+
+
+/**Filters excerpt  */
+
+/*add_filter('excerpt_length', 'my_excerpt_length');
 /*
-    font-family: 'Inconsolata', monospace;
-    font-family: 'Nunito', sans-serif;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;font-family: 'Inconsolata', monospace;font-weight: 400;color: #555;line-height: 140%;letter-spacing: 1px;
+function mytheme_add_woocommerce_support() {
+	add_theme_support( 'woocommerce', array(
+		'thumbnail_image_width' => 600,
+		'single_image_width'    => 600,
+
+        'product_grid'          => array(
+            'default_rows'    => 3,
+            'min_rows'        => 2,
+            'max_rows'        => 8,
+            'default_columns' => 4,
+            'min_columns'     => 2,
+            'max_columns'     => 5,
+        ),
+	) );
+}
+add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+
+/****
+    * Chamando o Tema Pai * v2
+    *
+function my_theme_enqueue_styles() {
+
+    $parent_style = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
+
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'child-style',
+        get_stylesheet_directory_uri() . '/style.css',
+        array( $parent_style ),
+        wp_get_theme()->get('Version')
+    );
+}
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+
+
+
+/****
+    * Chamando o Tema Pai * v1
+    *
+add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
+
+function enqueue_parent_styles() {
+   wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
+}
+
+// even more smart jquery inclusion :)
+add_action( 'init', 'jquery_register' );
+
+// register from google and for footer
+function jquery_register() {
+
+if ( !is_admin() ) {
+
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', ( 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' ), false, null, true );
+    wp_enqueue_script( 'jquery' );
+        }
+    }
+
+
+/* registrando scripts *
+add_action("wp_enqueue_scripts", "scripts");
+function myscripts() {
+    wp_register_script('tdwct',
+                        get_template_directory_uri() .'/js/scripts.js',   //
+                        array ('jquery', 'jquery-ui'),                  //depends on these, however, they are registered by core already, so no need to enqueue them.
+                        false, false);
+    wp_enqueue_script('tdwct');
+
+}
+
+/****
+    * Registrando Scripts v.2 *
+    */
+
+/* Registrando Scripts v.2 *
+function my_enqueue_scripts()
+{
+    wp_register_script( 'first', get_template_directory_uri() . 'js/first.js' );
+
+    wp_enqueue_script( 'second', get_template_directory_uri() . 'js/second.js', array( 'first' ) );
+}
+add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );
+
 */
 
-/*Extras 1*/ /*
- #menu-item-84 img.wp-smiley, #menu-item-84 img.emoji  {
 
-  -webkit-box-shadow: 0px 0px 6px 0px rgba(253, 0, 0, 0.493);
-  -moz-box-shadow: 0px 0px 6px 0px rgba(253, 0, 0, 0.55);
-  box-shadow: 0px 0px 6px 0px rgba(253, 0,0, 0.55);
-  animation: shadow-pulse 1s infinite;
-  box-shadow: 0 0 0 rgba(253, 0, 0, 0.4);
-
-  padding: 0 !important;
-  width: auto;
-  display: inline;
-  border-radius: 100%;
-  cursor: pointer;
-} */
-
-/* form 7 */
-.wpcf7 input[type="text"]:hover, .wpcf7 input[type="email"]:hover, .wpcf7 textarea:hover { box-shadow: 1px 1px 8px rgba(111, 108, 108, 0.13);  border: 1px solid #eaeaea; } .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea { border: 1px solid #eaeaea; } .personnalite { margin: 0 } .personnalite .messenger a {color: #fff }  
-
-.personnalite .messenger { width: 31%;padding: 5px 0;text-align: center;border-radius: 4%;} .fab-facebook-messenger.messenger-ico, .fab-facebook-messenger {
-    font-size: 34px;
-}
-
-.personnalite img {  animation: shake 7.1s infinite;    }
-
-        @keyframes shake {
-            0% {
-                transform: translate(1px, 1px) rotate(0deg);
-            }
-            10% {
-                transform: translate(-1px, -2px) rotate(-1deg);
-            }
-            20% {
-                transform: translate(-3px, 0px) rotate(1deg);
-            }
-            30% {
-                transform: translate(3px, 2px) rotate(0deg);
-            }
-            40% {
-                transform: translate(1px, -1px) rotate(1deg);
-            }
-            50% {
-                transform: translate(-1px, 2px) rotate(-1deg);
-            }
-            60% {
-                transform: translate(-3px, 1px) rotate(0deg);
-            }
-            70% {
-                transform: translate(3px, 1px) rotate(-1deg);
-            }
-            80% {
-                transform: translate(-1px, -1px) rotate(1deg);
-            }
-            90% {
-                transform: translate(1px, 2px) rotate(0deg);
-            }
-            100% {
-                transform: translate(1px, -2px) rotate(0deg);
-            }
-        }
-
-/*Outros*/
-.mob-menu-slideout-over {
-    position: relative;
-    padding: 0;
-    display: initial;
-}
-
-.torres-digita-logo img {top: 13px;}
-
-
-/*Padrao*/
-* {box-sizing: border-box; } body *:focus { outline-offset: none;  outline: none } html body { background-color: #fff; -moz-osx-font-smoothing: antialiased; -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased;} /*image videos*/ .image-video { border: 1px solid #eee; border-radius: 5px; padding: 20px 0; }
-
-*, ::after, ::before {-webkit-box-sizing: border-box; box-sizing: border-box; -ms-word-wrap: break-word; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 {font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619 /*#000*/} html .comment-form-cookies-consent {width: auto; display: inline-flex;} h1 {font-size: 34px; } h2 {font-size: 24px; margin-bottom: 22px} h3 {font-size: 22px; margin-bottom: 22px} h4, h5 {font-size: 18px} p, a, span, body, .sshos-horizontal-menu-inner a, .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a { font-size: 14.5px; font-family: 'Inconsolata', monospace; font-weight: 400; color: #555; letter-spacing: 1px;}
-
-/* p */ p, blockquote a { font-size: 16px; line-height: 1.5; font-weight: 500; color: #000/*#5e5555*/; letter-spacing: 0; /*Smooting*/  -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; /*ATENÇÃO*/ font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"} /* Link e Zelda */ .padrao a, .parallax a { font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif; color: #161619; font-size: 15.5px; font-weight: 500; letter-spacing: 0; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased;} 
-
-.inconsolata p, .inconsolata blockquote a {font-family: 'Inconsolata', monospace; font-size: 14.5px}
-
-input, textarea { border: 2px solid #f4f4f4; } blockquote p, blockquote a { color: #A08240; } 
-
-/*blockquote a:hover { font-weight: 600; } */ blockquote a:hover, blockquote a:focus {background-color:#ff3815;border-radius: 30px;color:#fff;font-weight: 400 !important;font-size: 14px;padding: 2px 9px;text-decoration: none;}
-
-/*.entry p::first-letter */ .blog .entry p:first-of-type::first-letter {
-  font-size: 200% ;
-  color: #161619;
-  font-weight: 600;
-}
-
-/*carrossel*/.carrossel-logos .item { float: initial; display: inherit; } .carrossel-logos {display: inline-block;position: relative;float: none;}
-
-
-#contato {width: 95%} html .titulo {margin: 30px auto; border-bottom: 2px solid #f4f4f4; }
-
-#content.col-md-12 {padding: 0} html .comment-form-cookies-consent input[type="checkbox"] {height: auto; margin: 0 auto; bottom: 2px;} 
-
-#commentform #wp-comment-cookies-consent {width: auto; display: inline-flex; margin: 0 12px 0 auto; position: relative} 
-
-.pace-done #content, .no-js #content, .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {width: 100%;margin: 0 auto;position: relative; font-size: 14px}
-
- /*Correçao de Layout da Builder*/
-.vc_row.wpb_row.vc_row-fluid {
-
-    max-width: 98%;
-    display: block;
-    float: initial;
-    margin: 10px auto;
-    }
-
- .parallax {
-    width: 100%;
-    left: 0 !important;
-    position: relative;
-    margin: 0 auto !important;
-    display: inline-block !important;
-    max-width: 100%;
-    height: 350px;
-}
-
-#parallax-titulo h2 {color: #fff;font-size: 55px;margin: 0 auto;position: relative;text-shadow: 0px 0px 6px rgba(204, 200, 156, 0.56);}
-
-.loop-carousel, #carrossel-modelos { overflow: hidden;}
-#carrossel-modelos  {
-    max-width: 100%;
-    display: block;
-    float: initial !important;
-    text-align: center;
-    position: relative !important;
-    margin: 0 auto !important;
-    left: 0 !important;
-    right: 0;
-}
-
-#torres-digital-background-head {
-    height: 200px;
-    background-image: url("/wp-content/themes/torres-digital-wordpress-official-theme-master/img/head/head.jpg");
-    z-index: 0;
-    position: relative;
-    background-attachment: fixed;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-
-
-/*.archive.post-type-archive.post-type-archive-product.woocommerce.woocommerce-page.woocommerce-js.\%f0\%9f\%8c\%9ftorres-digital.ver2\.2\.0.wpb-js-composer.js-comp-ver-5\.7.vc_responsive.pace-done .torres-digital-background-head { background-image: url("/wp-content/uploads/2019/07/background-loja-v.2.jpg") !important;}
-.page-id-29 .torres-digital-background-head { background-image: url("/wp-content/uploads/2019/07/background-loja-v.2.jpg") !important;}*/
-
-
-#sudo-su .torres-digital-background-head {
-    height: 250px;
-    background-image: url("/wp-content/themes/torres-digital-wordpress-official-theme-master/img/head/head.jpg");
-    z-index: 0;
-    position: relative;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    box-shadow: 0px -4px 35px -25px rgba(0, 0, 0, 0.31);
-}
-.home .torres-digital-background-head, .home .breadcrumb-torres-digital {
-    display: none;
-}
-
-.breadcrumb-torres-digital a { font-size: 14px;}
-.breadcrumb-torres-digital {
-    margin: 0 10px;
-    width: auto;
-    top: -26px;
-    position: relative;
-    padding-left: 1px;
-    display: block;
-    font-size: 14px;
-}/*
-#escolhe-tua-loja { scroll-behavior: smooth;
-  overflow-Y: scroll;}
-
-/* Content */
-#sudo-su .padrao {width: 100%; position: relative; display: inline-block; margin: 0 auto;}
-.content_background {
-    padding: 40px 0;
-    box-shadow: 0px -4px 35px -25px rgba(0, 0, 0, 0.31);
-    margin-bottom: 60px;
-}
-/*Página de Busca: resultado*/
-.no-content p {
-  font-size: 25px;
-  text-align: center;
-}
-
-/*Padrao - Plugins*/
-.xoo-wsc-basket {
-
-    border-radius: 30px;
-    -webkit-box-shadow: 0px 0px 6px 5px rgba(204, 200, 156, 0.56);
-    -moz-box-shadow: 0px 0px 6px 5px rgba(204, 200, 156, 0.56);
-    box-shadow: 0px 0px 6px 5px rgba(204, 200, 156, 0.56);
-}
-#sudo-su .xoo-wsc-icon-basket1::before { content: "\e74b"; }
-.xoo-wsc-icon-basket1 { font-family: 'ecommerce' !important; }
-.xoo-wsc-close { font-family: 'Woo-Side-Cart'; } .xoo-wsc-ecnt {font-size: 14px;text-align: center;}
-
-/*Head*/
-
-/*Woocommerce cart*/
-.login_cart_wrap.col-md-3.col-xs-12 {
-  float: none;
-  width: auto;
-  margin: 20px auto 0;
-  position: relative;
-  display: inline-block;
-  float: right;
-}
-/*Logo*/
-#torres-digita-logo {
-  width: 100%;
-  margin: 9px auto 0;
-  position: relative;
-  display: block;
-  text-align: center;
-  max-width: 135px;
-}
-/*Menu*/
-.collapse {display: block}
-
-#jqueryslidemenu ul.nav > li > ul {
-    top: 100%;
-    padding: 0;
-    border: 0px;
-    border-radius: 30px;
-    color: #333;
-}
-
-
-#jqueryslidemenu ul.nav > li > ul > li a:hover {
-    background-color: #ff3815;
-    border-radius: 30px;
-    color: #fff;
-}
-
-#sudo-su #menu-primary > li > a {font-family: 'Futura PT', 'Nunito', 'Open Sans', sans-serif;font-size: 14.5px;}
-
-.ql_login-btn {text-transform: lowercase} .ql_login-btn { font-size: 12.4px; font-size: 0.775rem; font-weight: 600; border: none; background: #FF3815; border-radius: 30px; padding: 1px 10px; color: #fff; } .login_btn_wrap {float: right;height: 30px;top: 4px;left: 0;display: inline-block;position: relative;}
-
-
-        .ql_login-btn:hover {text-decoration: none;/*border-color: #a08240;*/ color: #fff;
-
-            -webkit-box-shadow: 0px 0px 6px 0px rgba(138, 138, 138, 0.55);
-            -moz-box-shadow: 0px 0px 6px 0px rgba(138, 138, 138, 0.55);
-            box-shadow: 0px 0px 6px 0px rgba(138, 138, 138, 0.55);
-
-            animation: shadow-pulse 1s infinite;cursor: pointer;box-shadow: 0 0 0 rgba(204,169,44, 0.4);
-        }
-
-.ql_login-btn:focus {color: #fff;text-decoration: unset;animation: shadow-pulse 1s infinite;cursor: pointer;box-shadow: 0 0 0 rgba(204,169,44, 0.4);} @keyframes shadow-pulse{0% {box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);}100% {box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);}}
-
-.ql_logo_nav.col-md-9.col-xs-12 {
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
-}
-.navbar-nav {
-  float: initial;
-  margin: 0 auto;
-}
-#jqueryslidemenu {
-    margin: 0 auto;
-    display: block;
-}
-#jqueryslidemenu ul.nav > li {
-  margin-left: 0;
-  display: inline-block;
-  float: initial;
-}
-
-.sshos-dropdown-menu-button-inner {border-color: #fff}
-.sshos-logo-wrapper {left: 160px;position: relative;}
-.sshos-horizontal-menu-inner li {  display: inline; margin-right: 0px; }
-.sshos-contents-wrapper.sshos-active { box-shadow: 0 3px 3px rgba(0,0,0,.1); }
-.sshos-horizontal-menu-wrapper { float: initial; margin: 0 auto;}
-.sshos-horizontal-menu-inner {border: none}
-
-#menu-na-esquerda {
-    width: auto;
-    float: left;
-    margin: 20px auto 0;
-    position: relative;
-}
-/* Desapear*//*
-#menu-na-esquerda .page_item.page-item-7, #menu-na-esquerda .page_item.page-item-35, #menu-na-esquerda .page_item.page-item-23,
-#menu-na-esquerda .page_item.page-item-29, #menu-na-esquerda .page_item.page-item-16, #menu-na-esquerda .page_item.page-item-26, #menu-na-esquerda .page_item.page-item-17, #menu-na-esquerda .page_item.page-item-26, #menu-na-esquerda .page_item.page-item-9, #menu-na-esquerda .page_item.page-item-3  { display: none; } */
-
-#menu-na-esquerda ul > li {
-    display: inline-block;
-}
-#menu-na-esquerda  .login_cart_wrap.col-md-3.col-xs-12 {margin: 0}
-#menu-na-esquerda .menu-top-menu-container ul > li > a {font-size: 14.5px; position: relative}
-
-html #jqueryslidemenu ul.nav > li > a, .sshos-horizontal-menu-inner a,
-.sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a, #menu-na-esquerda ul > li > a {
-    text-decoration: none;
-    font-size: 15px;
-    font-size: 0.9375rem;
-    padding: 0 8px;
-    margin: 9px 8px 0;
-    color: #161619 /*#555*/;
-    font-weight: 600;
-    text-transform: lowercase;
-}
-.nav > li > a:hover, .nav > li > a:focus, .sshos-horizontal-menu-inner a:focus, .sshos-dropdown-menu-wrapper li a:focus,
-#menu-na-esquerda .menu-top-menu-container ul > li > a:focus { text-decoration: none; background-color: #C6AF7C; color: #fff !important; border-radius: 30px; }
-
-#jqueryslidemenu ul.nav > li > a:hover, .sshos-horizontal-menu-inner a:hover, .sshos-dropdown-menu-wrapper li a:hover  {  color: #555 !important;
-    background-color: transparent;
-}
-.current-menu-item a { color: #fff /*#A08240*/ !important; font-weight: 600; border: none; background:#FF3815; border-radius: 30px; padding: 1px 10px;} .current-menu-item a:hover { color: #555 /*#A08240*/ }
-
-.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
-    color: #555;}
-/*Mobile Menu*/
-
-#ql_nav_btn {
-  position: relative;
-  right: 0;
-  top: 10px;
-  margin: 0;
-}
-.navbar-toggle {
-  position: relative;
-  float: left;
-}
-
-.sshos-dropdown-menu-wrapper-active { left: 5px; width: 97%;}
-.sshos-dropdown-menu-wrapper { border-bottom: 3px solid #FE1D1F;; padding: 10px}
-
-/*Home*/
-
-/*Blog*/
-
-.col-md-6 {width: 100%;}.col-md-6 .post_title {text-align: center;margin-bottom: 19px;padding: 20px 0 0;}
-.col-md-6 .post_title a {font-size: 20px;}.col-md-6  .entry h2 {font-size: 17px;text-align: center;}
-.metadata {text-align: center}
-.metadata ul li {margin: 0 auto;display: inline-block;float: initial;}
-.blog article {max-width: 45%;display: inline-block;margin: 0 20px;padding: 0 10px;}
-.col-md-10 {width: 56.333%;}.col-md-push-2 {left: initial;float: left;width: 75.000%;}
-
-/*Sidebar*/
-#sidebar {
-  float: initial;
-  margin: 0 10px;
-  padding: 0 10px;
-  position: relative;
-  width: auto;
-  display: inline-block;
-  right: initial;
-  max-width: 300px;
-}
-#sidebar .widget h4 {  text-transform: initial;}
-.blog article {
-    max-width: 45%;
-    display: inline-grid;
-    margin: 0 5px;
-    padding: 0 10px;
-}
-#sidebar .widget > ul li > a {
-    color: #777777;
-    padding: 0.63636364em 0;
-    display: block;
-    font-weight: normal;
-    -webkit-transition: all 200ms;
-    -o-transition: all 200ms;
-    transition: all 200ms;
-    font-size: 15.5px;
-    line-height: 1.3em;
-    letter-spacing: 0;
-}
-/*Pages*/
-html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: auto; text-transform: capitalize;}
-
-
-#center-sudo-su-- { margin-bottom: 50px; }
-/*Post*/
-.single .post_title {font-size: 35px; text-align: center}
-.post-template-default .col-md-push-2 {
-  width: 60%;
-  margin: 0 35px;
-}
-
-/*Woocommerce*/
-.product-template-default .col-md-6 {
-    max-width: 50%;
-}
-.product-template-default .col-md-10 {
-    width: 100%;
-    max-width: 455px;
-    display: inline-block;
-}
-.owl-item {
-    max-width: 442px;
-    position: relative;
-    display: inline-block;
-}
-
-.woocommerce form .form-row .input-checkbox, .woocommerce-page form .form-row .input-checkbox {position: relative}
-.woocommerce.single-product span.onsale, .woocommerce span.onsale {  border-radius: 0; background-color: #A08240; padding: 8px 30px;line-height: 12px;min-height: 20px; }
-
-#sudo-su .woocommerce .products .product .product_content { position: relative;top: 0;right: 0;left: 0;bottom: 0; }
-.products.columns-3 #sudo-su .woocommerce #main .products .product, .woocommerce-page .products .product {width: auto;}
-
-.woocommerce #respond input#submit,
-.woocommerce a.button, .woocommerce button.button,
-.woocommerce input.button {color: #fff;background-color: #FF3815;}
-
-/*Footer*/
-#footer {
-  width: 100%;
-  margin: 0 auto;
-  background-color: #f9f9f9;
-  border-top: 2px solid #f9f9f9;
-}
-
-.sub_footer p {
-  float: initial;
-  text-align: center;
-}
-.nav_social {
-  float: initial;
-}
-.nav_social li {
-  float: initial;
-  display: inline-block;
-}
-/*BootStrap*/
-
-/*==================================================
-=            Bootstrap 3 Media Queries             =
-==================================================*/
-
-
-
-
-	/*==========  Mobile First Method  ==========*/
-
-	/* Custom, iPhone Retina */
-	@media only screen and (min-width : 320px) {
-	}
-
-	/* Extra Small Devices, Phones */
-	@media only screen and (min-width : 480px) {
-
-	}
-
-	/* Small Devices, Tablets */
-	@media only screen and (min-width : 768px) {
-
-
-	}
-
-	/* Medium Devices, Desktops */
-	@media only screen and (min-width : 992px) {
-
-	}
-
-	/* Large Devices, Wide Screens */
-	@media only screen and (min-width : 1200px) {
-
-	}
-
-
-
-	/*==========  Non-Mobile First Method  ==========*/
-
-	/* Large Devices, Wide Screens */
-	@media only screen and (max-width : 1200px) {
-
-	}
-
-	/* Medium Devices, Desktops */
-	@media only screen and (max-width : 992px) {
-
-	}
-
-	/* Small Devices, Tablets */
-	@media only screen and (max-width : 768px) {
-
-	}
-
-	/* Extra Small Devices, Phones */
-	@media only screen and (max-width : 480px) {
-
-	}
-
-	/* Custom, iPhone Retina */
-	@media only screen and (max-width : 320px) {
- 	}
-
-
-    /*=====================================================
-    =            Bootstrap 2.3.2 Media Queries            =
-    =====================================================*/
-    @media only screen and (max-width : 1440px) { }
-
-
-    @media only screen and (max-width : 1280px) {
-      
-      /*p, a, span, body { font-size: 15px; }
-        /*Home*/
-        /*Blog*/
-    .col-md-push-2 {width: 71%;}
-    .col-md-6 p {font-size: 14px;}
-    .col-sm-6 {width: 100%;}
-    .col-md-6 .post_title a {font-size: 18px;}
-    .blog article {max-width: 45%;display: inline-grid;margin: 0 10px;padding: 0 5px;}
-    .sshos-logo-wrapper {display: inline-block; position: relative; left: 90px;}
-
-    }
-
-    @media only screen and (max-width : 1200px) {
-
-
-    }
-
-    @media only screen and (max-width : 1024px) {
-
-        .container { width: 95%; } .ql_logo_nav.col-md-9.col-xs-12, #ql-navigation {  padding: 0; }
-         html .post-template-default .col-md-push-2 {width: auto;margin: 0 5px; padding: 0 15px}
-        .sshos-logo-wrapper {left: 0;}
-
-        #jqueryslidemenu ul.nav > li > a, .sshos-horizontal-menu-inner a,
-        .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a {margin: 9px 5px 0;}
-
-
-}
-
-    @media only screen and (max-width : 992px) { .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a {margin: 9px 0 0;} /*End*/ }
-
-    @media only screen and (max-width : 979px) {
-
-}
-  @media only screen and (max-width : 800px) {
-        /*I got your misfortune, son of a bitch! #QuemaLabs!*/
-      .navbar-collapse.collapse, .collapse  { display: none !important; }
-      .collapse.in {  display: block !important; }
-
-               #ql_nav_btn {width: 100%}
-         .navbar-toggle {display: initial !important}
-      /*problema*/  .login_cart_wrap.col-md-3.col-xs-12 {width: 100%; padding: 10px;}
-        .col-md-push-2 { left: initial; float: initial; width: 100%;  }
-
-
-
-             #jqueryslidemenu ul.nav > li {margin-left: 0;display: flex;float: initial;}
-             #ql-navigation {border-bottom: 4px solid #f00;-webkit-box-shadow: 0px -4px 35px -25px rgba(0, 0, 0, 0.31);
-             -moz-box-shadow: 0px -4px 35px -25px rgba(0, 0, 0, 0.31);box-shadow: 0px -4px 35px -25px rgba(0, 0, 0, 0.31);}
-      .torres-digita-logo img { top: -56px; position: relative; margin: 0 auto; }
-      .torres-digita-logo { margin: 0 auto 12px; height: 200px; }
-
-      /*Woocommerce*/
-            .woocommerce .products ul, .woocommerce ul.products { display: flex; }
-        #content .products.columns-3 .product { width: auto !important; margin: 0 auto; }
-}
-
-    @media only screen and (max-width : 768px) {
-
-        .content_background { padding: 40px 20px; }
-          /*menu header*/
-        .login_btn_wrap {float: left; font-weight: 600}
-        .ql_login-btn {font-weight: 600; border: none; background: #FF3815; border-radius: 30px; padding: 1px 10px; color: #fff; }
-        .ql_login-btn:hover {text-decoration: none;/*border-color: #a08240;*/ color: #fff;
-
-            -webkit-box-shadow: 0px 0px 6px 0px rgba(138, 138, 138, 0.55);
-            -moz-box-shadow: 0px 0px 6px 0px rgba(138, 138, 138, 0.55);
-            box-shadow: 0px 0px 6px 0px rgba(138, 138, 138, 0.55);
-        }
-
-
-        #jqueryslidemenu {margin-bottom: 10px}
-
-}
-
-    @media only screen and (max-width : 640px) {
-
-        #torres-digita-logo { top: -20px; }
-
-        .container {width: 100%;}
-
-        /*menu header*
-        .login_btn_wrap {float: left; font-weight: 600}
-        .ql_login-btn {font-weight: 600;border: 1px solid #a6a6a6;border-radius: 30px;}
-        .ql_login-btn:hover {text-decoration: none;border-color: #a08240;}
-        .login_cart_wrap.col-md-3.col-xs-12 {width: 100%;}
-
-        .col-md-push-2 { left: initial;float: initial;width: 100%;  }
-        html .post-template-default .col-md-push-2 {width: auto;margin: 0 auto; padding: 0 15px}
-                .example-item {  max-width: 50%; } */
-
-
- }
-
-    @media only screen and (max-width : 480px) {
-
-        h1,h2,h3,h4,h5 {text-align: center}
-        h2 {font-size: 27px;} h3 { font-size: 18px;  text-align: center;}
-        .blog article {  max-width: 100%; }
-        .ql_login-btn {font-weight: 400;padding: 1px 10px;font-size: 11px;}
-
-}
-
-@media only screen and (max-width : 360px) {
-        
-  #torres-digita-logo {
-top: -70px; }
-
-}
-
-    @media only screen and (max-width : 320px) {
-        
-        #torres-digita-logo { top: -61px; } #sudo-su .torres-digital-background-head { background-position-y: 238px;height: 134px; }
-        .torres-digita-logo img { top: 14px; } h1 { font-size: 29px;} .content_background {padding: 40px 0px;}
-
-}
-
-/* ############################ fim bootStrap ##################### */
-
-    /*
-      Based on:
-      1. http://stephen.io/mediaqueries
-      2. https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+/****
+    * Registrando Scripts v.3 *
     */
 
-    /* iPhone 6 in portrait & landscape */
-    @media only screen
-    and (min-device-width : 375px)
-    and (max-device-width : 667px) {
+/* Registrando Scripts v.3 *
 
-    }
-
-    /* iPhone 6 in landscape */
-    @media only screen
-    and (min-device-width : 375px)
-    and (max-device-width : 667px)
-    and (orientation : landscape) {
-
-    }
-
-    /* iPhone 6 in portrait */
-    @media only screen
-    and (min-device-width : 375px)
-    and (max-device-width : 667px)
-    and (orientation : portrait) {
-
-    }
-
-    /* iPhone 6 Plus in portrait & landscape */
-    @media only screen
-    and (min-device-width : 414px)
-    and (max-device-width : 736px) {
+function myscripts() {
+    //get some external script that is needed for this script
+    wp_enqueue_script('jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js');
+    $script = get_template_directory_uri() . '/library/myscript.js';
+    wp_register_script('myfirstscript',
+                        $script,
+                        array ('jquery', 'jquery-ui'),
+                        false, false);
+    //always enqueue the script after registering or nothing will happen
+    wp_enqueue_script('fullpage-slimscroll');
 
 }
+add_action("wp_enqueue_scripts", "myscripts");
 
-    /* iPhone 6 Plus in landscape */
-    @media only screen
-    and (min-device-width : 414px)
-    and (max-device-width : 736px)
-    and (orientation : landscape) {
 
-    }
 
-    /* iPhone 6 Plus in portrait */
-    @media only screen
-    and (min-device-width : 414px)
-    and (max-device-width : 736px)
-    and (orientation : portrait) {
-
-    }
-
-    /* iPhone 5 & 5S in portrait & landscape */
-    @media only screen
-    and (min-device-width : 320px)
-    and (max-device-width : 568px) {
-
-    }
-
-    /* iPhone 5 & 5S in landscape */
-    @media only screen
-    and (min-device-width : 320px)
-    and (max-device-width : 568px)
-    and (orientation : landscape) {
-
-    }
-
-    /* iPhone 5 & 5S in portrait */
-    @media only screen
-    and (min-device-width : 320px)
-    and (max-device-width : 568px)
-    and (orientation : portrait) {
-
-    }
 
     /*
-      iPhone 2G, 3G, 4, 4S Media Queries
-      It's noteworthy that these media queries are also the same for iPod Touch generations 1-4.
-    */
 
-    /* iPhone 2G-4S in portrait & landscape */
-    @media only screen
-    and (min-device-width : 320px)
-    and (max-device-width : 480px) {
+    function child_shophistic_theme_enqueue_styles() {
+
+	//First we load Bootstrap from parent, then parent styles and then child styles
+    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css', array( 'bootstrap' ) );
+    wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'parent-style' ) );
 
     }
+    add_action( 'wp_enqueue_scripts', 'child_shophistic_theme_enqueue_styles' );
+
+    register_sidebar( array(
+    'name' => 'Footer Sidebar 1',
+    'id' => 'footer-sidebar-1',
+    'description' => 'Appears in the footer area',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
+    ) );
+    register_sidebar( array(
+    'name' => 'Footer Sidebar 2',
+    'id' => 'footer-sidebar-2',
+    'description' => 'Appears in the footer area',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
+    ) );
+    register_sidebar( array(
+    'name' => 'Footer Sidebar 3',
+    'id' => 'footer-sidebar-3',
+    'description' => 'Appears in the footer area',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
+    ) );
+    register_sidebar( array(
+    'name' => 'Footer Sidebar 4',
+    'id' => 'footer-sidebar-4',
+    'description' => 'Appears in the footer area',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
+    ) );
+
+
+    function my_login_logo_one() {  ?>
+        <style type="text/css">
+        body.login div#login h1 a {
+            background-image: url(/wp-content/uploads/2018/10/logo-sites-torresdigital.png);
+            background-size: 70%;
+            width: 100%;
+            height: 237px;
+            text-align: center;
+            position: relative;
+            margin: 0 auto;
+            left: 17px;
+                                    }
+        </style>
+    <?php  } add_action( 'login_enqueue_scripts', 'my_login_logo_one' ); */
 
-    /* iPhone 2G-4S in landscape */
-    @media only screen
-    and (min-device-width : 320px)
-    and (max-device-width : 480px)
-    and (orientation : landscape) {
 
-    }
-
-    /* iPhone 2G-4S in portrait */
-    @media only screen
-    and (min-device-width : 320px)
-    and (max-device-width : 480px)
-    and (orientation : portrait) {
-
-    }
-
-    /* iPad in portrait & landscape */
-    @media only screen
-    and (min-device-width : 768px)
-    and (max-device-width : 1024px)  {
-
-    }
-
-    /* iPad in landscape */
-    @media only screen
-    and (min-device-width : 768px)
-    and (max-device-width : 1024px)
-    and (orientation : landscape) {
-
-    }
-
-    /* iPad in portrait */
-    @media only screen
-    and (min-device-width : 768px)
-    and (max-device-width : 1024px)
-    and (orientation : portrait) {
-
-    }
-
-    /* Galaxy S3 portrait and landscape */
-    @media screen
-      and (device-width: 320px)
-      and (device-height: 640px)
-      and (-webkit-device-pixel-ratio: 2) {
-
-    }
-
-    /* Galaxy S3 portrait */
-    @media screen
-      and (device-width: 320px)
-      and (device-height: 640px)
-      and (-webkit-device-pixel-ratio: 2)
-      and (orientation: portrait) {
-
-    }
-
-    /* Galaxy S3 landscape */
-    @media screen
-      and (device-width: 320px)
-      and (device-height: 640px)
-      and (-webkit-device-pixel-ratio: 2)
-      and (orientation: landscape) {
-
-    }
-
-    /* Galaxy S4 portrait and landscape */
-    @media screen
-      and (device-width: 320px)
-      and (device-height: 640px)
-      and (-webkit-device-pixel-ratio: 3) {
-
-    }
-
-    /* Galaxy S4 portrait */
-    @media screen
-      and (device-width: 320px)
-      and (device-height: 640px)
-      and (-webkit-device-pixel-ratio: 3)
-      and (orientation: portrait) {
-
-    }
-
-    /* Galaxy S4 landscape */
-    @media screen
-      and (device-width: 320px)
-      and (device-height: 640px)
-      and (-webkit-device-pixel-ratio: 3)
-      and (orientation: landscape) {
-
-    }
-
-    /* Galaxy S5 portrait and landscape */
-    @media screen
-      and (device-width: 360px)
-      and (device-height: 640px)
-      and (-webkit-device-pixel-ratio: 3) {
-
-    }
-
-    /* Galaxy S5 portrait */
-    @media screen
-      and (device-width: 360px)
-      and (device-height: 640px)
-      and (-webkit-device-pixel-ratio: 3)
-      and (orientation: portrait) {
-
-    }
-
-    /* Galaxy S5 landscape */
-    @media screen
-      and (device-width: 360px)
-      and (device-height: 640px)
-      and (-webkit-device-pixel-ratio: 3)
-      and (orientation: landscape) {
-
-    }
-
-    /* HTC One portrait and landscape */
-    @media screen
-      and (device-width: 360px)
-      and (device-height: 640px)
-      and (-webkit-device-pixel-ratio: 3) {
-
-    }
-
-    /* HTC One portrait */
-    @media screen
-      and (device-width: 360px)
-      and (device-height: 640px)
-      and (-webkit-device-pixel-ratio: 3)
-      and (orientation: portrait) {
-
-    }
-
-    /* HTC One landscape */
-    @media screen
-      and (device-width: 360px)
-      and (device-height: 640px)
-      and (-webkit-device-pixel-ratio: 3)
-      and (orientation: landscape) {
-
-    }
-
-    /*
-      iPad 3 & 4 Media Queries
-      If you're looking to target only 3rd and 4th generation Retina iPads
-      (or tablets with similar resolution) to add @2x graphics,
-      or other features for the tablet's Retina display, use the following media queries.
-    */
-
-    /* Retina iPad in portrait & landscape */
-    @media only screen
-    and (min-device-width : 768px)
-    and (max-device-width : 1024px)
-    and (-webkit-min-device-pixel-ratio: 2) {
-
-    }
-
-    /* Retina iPad in landscape */
-    @media only screen
-    and (min-device-width : 768px)
-    and (max-device-width : 1024px)
-    and (orientation : landscape)
-    and (-webkit-min-device-pixel-ratio: 2) {
-
-    }
-
-    /* Retina iPad in portrait */
-    @media only screen
-    and (min-device-width : 768px)
-    and (max-device-width : 1024px)
-    and (orientation : portrait)
-    and (-webkit-min-device-pixel-ratio: 2) {
-
-    }
-
-    /*
-      iPad 1 & 2 Media Queries
-      If you're looking to supply different graphics or choose different typography
-      for the lower resolution iPad display, the media queries below will work
-      like a charm in your responsive design!
-    */
-
-    /* iPad 1 & 2 in portrait & landscape */
-    @media only screen
-    and (min-device-width : 768px)
-    and (max-device-width : 1024px)
-    and (-webkit-min-device-pixel-ratio: 1) {
-
-    }
-
-    /* iPad 1 & 2 in landscape */
-    @media only screen
-    and (min-device-width : 768px)
-    and (max-device-width : 1024px)
-    and (orientation : landscape)
-    and (-webkit-min-device-pixel-ratio: 1) {
-
-    }
-
-    /* iPad 1 & 2 in portrait */
-    @media only screen
-    and (min-device-width : 768px)
-    and (max-device-width : 1024px)
-    and (orientation : portrait)
-    and (-webkit-min-device-pixel-ratio: 1) {
-
-    }
-
-    /* iPad mini in portrait & landscape */
-    @media only screen
-    and (min-device-width : 768px)
-    and (max-device-width : 1024px)
-    and (-webkit-min-device-pixel-ratio: 1) {
-
-    }
-
-    /* iPad mini in landscape */
-    @media only screen
-    and (min-device-width : 768px)
-    and (max-device-width : 1024px)
-    and (orientation : landscape)
-    and (-webkit-min-device-pixel-ratio: 1) {
-
-    }
-
-    /* iPad mini in portrait */
-    @media only screen
-    and (min-device-width : 768px)
-    and (max-device-width : 1024px)
-    and (orientation : portrait)
-    and (-webkit-min-device-pixel-ratio: 1) {
-
-    }
-
-    /* Galaxy Tab 10.1 portrait and landscape */
-    @media
-      (min-device-width: 800px)
-      and (max-device-width: 1280px) {
-
-    }
-
-    /* Galaxy Tab 10.1 portrait */
-    @media
-      (max-device-width: 800px)
-      and (orientation: portrait) {
-
-    }
-
-    /* Galaxy Tab 10.1 landscape */
-    @media
-      (max-device-width: 1280px)
-      and (orientation: landscape) {
-
-    }
-
-    /* Asus Nexus 7 portrait and landscape */
-    @media screen
-      and (device-width: 601px)
-      and (device-height: 906px)
-      and (-webkit-min-device-pixel-ratio: 1.331)
-      and (-webkit-max-device-pixel-ratio: 1.332) {
-
-    }
-
-    /* Asus Nexus 7 portrait */
-    @media screen
-      and (device-width: 601px)
-      and (device-height: 906px)
-      and (-webkit-min-device-pixel-ratio: 1.331)
-      and (-webkit-max-device-pixel-ratio: 1.332)
-      and (orientation: portrait) {
-
-    }
-
-    /* Asus Nexus 7 landscape */
-    @media screen
-      and (device-width: 601px)
-      and (device-height: 906px)
-      and (-webkit-min-device-pixel-ratio: 1.331)
-      and (-webkit-max-device-pixel-ratio: 1.332)
-      and (orientation: landscape) {
-
-    }
-
-    /* Kindle Fire HD 7" portrait and landscape */
-    @media only screen
-      and (min-device-width: 800px)
-      and (max-device-width: 1280px)
-      and (-webkit-min-device-pixel-ratio: 1.5) {
-
-    }
-
-    /* Kindle Fire HD 7" portrait */
-    @media only screen
-      and (min-device-width: 800px)
-      and (max-device-width: 1280px)
-      and (-webkit-min-device-pixel-ratio: 1.5)
-      and (orientation: portrait) {
-
-    }
-
-    /* Kindle Fire HD 7" landscape */
-    @media only screen
-      and (min-device-width: 800px)
-      and (max-device-width: 1280px)
-      and (-webkit-min-device-pixel-ratio: 1.5)
-      and (orientation: landscape) {
-
-    }
-
-    /* Kindle Fire HD 8.9" portrait and landscape */
-    @media only screen
-      and (min-device-width: 1200px)
-      and (max-device-width: 1600px)
-      and (-webkit-min-device-pixel-ratio: 1.5) {
-
-    }
-
-    /* Kindle Fire HD 8.9" portrait */
-    @media only screen
-      and (min-device-width: 1200px)
-      and (max-device-width: 1600px)
-      and (-webkit-min-device-pixel-ratio: 1.5)
-      and (orientation: portrait) {
-
-    }
-
-    /* Kindle Fire HD 8.9" landscape */
-    @media only screen
-      and (min-device-width: 1200px)
-      and (max-device-width: 1600px)
-      and (-webkit-min-device-pixel-ratio: 1.5)
-      and (orientation: landscape) {
-
-    }
-
-    /* Laptops non-retina screens */
-    @media screen
-      and (min-device-width: 1200px)
-      and (max-device-width: 1600px)
-      and (-webkit-min-device-pixel-ratio: 1) {
-
-    }
-
-    /* Laptops retina screens */
-    @media screen
-      and (min-device-width: 1200px)
-      and (max-device-width: 1600px)
-      and (-webkit-min-device-pixel-ratio: 2)
-      and (min-resolution: 192dpi) {
-
-    }
-
-    /* Apple Watch */
-    @media
-      (max-device-width: 42mm)
-      and (min-device-width: 38mm) {
-
-    }
-
-    /* Moto 360 Watch */
-    @media
-      (max-device-width: 218px)
-      and (max-device-height: 281px) {
-
-    }
-
-@font-face {
-	font-family: 'Futura PT';
-	src: url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/FuturaPT-Demi.woff2") format("woff2"), url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/FuturaPT-Demi.woff") format("woff");
-	font-weight: 600;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Futura PT';
-	src: url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/FuturaPT-Medium.woff2") format("woff2"), url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/FuturaPT-Medium.woff") format("woff");
-	font-weight: 500;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Futura PT';
-	src: url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/FuturaPT-BookObl.woff2") format("woff2"), url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/fonts/FuturaPT-BookObl.woff") format("woff");
-	font-weight: normal;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: 'Futura PT';
-	src: url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/FuturaPT-Book.woff2") format("woff2"), url("/wp-content/themes/torres-digital-wordpress-official-theme-master/fonts/fonts/FuturaPT-Book.woff") format("woff");
-	font-weight: normal;
-	font-style: normal;
-}
-
-
-
-/* 1.0 Normalize Styles based on Normalize v5.0.0 @link https: //github.com/necolas/normalize.css
-@import url('https://www.fontify.me/wf/d1e0123011c04b12846e626981f6fdd4');
-
-@import url('https://fonts.googleapis.com/css?family=Poppins');
--moz-osx-font-smoothing: grayscale; linear-gradient(to right, #58c7ec, #51ff6c)
-/*20.0 Print /http://bridgelanding.app/wp-content/uploads/2017/06/logo-stick.png
