@@ -15,6 +15,38 @@
     </script>
 
     <meta name="google-site-verification" content="zQE-2Pv_zdBHks0QFN1VjRDW-WQC6qAe4pYnuWXR4zI" />
+    <meta name="google-site-verification" content="at2jnP3JTE_BhDrSlBgtzyLr5-M-yfw7HzY4wPKzUqs" /><!-- atorres@*/ -->
+    <link rel="alternate" href="https://torresdigital.tk/" hreflang="pt-br" />
+
+    <!--
+
+        <link rel="alternate" href="https://site.com.br/conteudo/" hreflang="pt-br" /> (OBS: indicando a versão em português do Brasil)
+         <link rel="alternate" href="https://site.com.es/contenido/" hreflang="es" /> (OBS: indicando a versão em espanhol)
+         <link rel="alternate" href="https://site.com/content/" hreflang="en" /> (OBS: indicando a versão em inglês).
+            <link rel="alternate" href="https://site.com/content/" hreflang="x-default" /> 
+        (OBS: indicando que, caso o usuário não tenha determinado idioma/região, essa é a página que deve ser apresentada)
+
+    -->
+
+
+
+    
+    <style type ="text/css">
+    
+    
+    
+    /***************************/
+/*start mobile menu overlay*/
+/***************************/
+
+/*************************/
+/*end mobile menu overlay*/
+/*************************/
+    
+    
+    </style>
+
+
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
@@ -23,6 +55,17 @@
             enable_page_level_ads: true
         });
     </script>
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+
 
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -43,8 +86,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<meta name="description" content="<?php bloginfo('description'); ?>">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <!-- Magnific Popup core CSS file -->
+<link rel="stylesheet" href="magnific-popup/magnific-popup.css">
 
-    <script src="https://kit.fontawesome.com/d292a654fc.js" crossorigin="anonymous"></script>
+<!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="popup-video.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js"></script>
+
+<!-- Magnific Popup core JS file -->
+<script src="magnific-popup/jquery.magnific-popup.js"></script>
 
    <!-- WP_Head -->
     	<?php wp_head(); ?>
@@ -106,12 +163,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                             <!--  <a href="< ?php echo home_url(); ?>/" class="ql_logo google-font">
                                 < ?php bloginfo('name'); ?> </a> -->
-                                <button id="ql_nav_btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ql-navigation" aria-expanded="false">
+                               <!--  <button id="ql_nav_btn" type="button" class="navbar-ql_nav_btn collapsed" data-toggle="collapse" data-target="#ql-navigation" aria-expanded="false">
                                             <span class="sr-only">Toggle navigation</span>
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
-                                </button>
+                                </button> -->
 
 
                         <div id="torres-digita-logo" class="torres-digita-logo">
@@ -119,9 +176,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <img src="/wp-content/themes/torres-digital-wordpress-official-theme-master/img/logo22019.jpg" alt="Logo" width="138" height="156" />
                             </a>
                         </div>
+                            
+                            
 
                             <div class="collapse navbar-collapse" id="ql-navigation">
-                                <nav id="jqueryslidemenu" class="jqueryslidemenu navbar " role="navigation">
+                                <nav id="jqueryslidemenu" class="jqueryslidemenu navbar" role="navigation">
                                     <?php
                                     if ( has_nav_menu( 'menu-1' ) ){
                                             wp_nav_menu( array(
