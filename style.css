@@ -650,7 +650,7 @@ top: -70px; }
     @media only screen and (max-width : 320px) {
         
         #torres-digita-logo { top: -61px; } #sudo-su .torres-digital-background-head { background-position-y: 238px;height: 134px; }
-        .torres-digita-logo img { top: 14px; } h1 { font-size: 29px;} .content_background {padding: 40px 0px;} .mobmenu-content .current-menu-item a {max-width: 50%;float: none;display: inline-block;text-align: center;position: relative;padding: 0 12px;margin-left: 12px;} #mobmenuleft {font-weight: 600;} .mob-menu-header-holder {background: transparent;}
+        .torres-digita-logo img { top: 14px; } h1 { font-size: 29px;} .content_background {padding: 40px 0px;} .mobmenu-content .current-menu-item a {max-width: 50%;float: none;display: inline-block;text-align: center;position: relative;padding: 0 12px;margin-left: 12px;} #mobmenuleft {font-weight: 600;} .mob-menu-header-holder {background: transparent;} .mobmenul-container i {color: #333;}
 
 }
 
