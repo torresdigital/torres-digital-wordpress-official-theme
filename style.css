@@ -91,6 +91,14 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
             }
         }
 
+/*Outros*/
+.mob-menu-slideout-over {
+    position: relative;
+    padding: 0;
+    display: initial;
+}
+
+.torres-digita-logo img {top: 13px;}
 
 
 /*Padrao*/
@@ -401,7 +409,7 @@ html #jqueryslidemenu ul.nav > li > a, .sshos-horizontal-menu-inner a,
     letter-spacing: 0;
 }
 /*Pages*/
-html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: 1em; text-transform: capitalize;}
+html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: auto; text-transform: capitalize;}
 
 
 #center-sudo-su-- { margin-bottom: 50px; }
@@ -641,8 +649,7 @@ top: -70px; }
 
     @media only screen and (max-width : 320px) {
         
-        #torres-digita-logo {
-    top: -61px; }
+        #torres-digita-logo { top: -61px; } #sudo-su .torres-digital-background-head { background-position-y: 238px;height: 134px; }
 
 }
 
