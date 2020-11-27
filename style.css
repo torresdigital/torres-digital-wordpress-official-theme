@@ -66,9 +66,13 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
         html .mob-menu-header-holder {background: #fff;}
         html .mobmenul-container i {color: #333;}
         html body.mob-menu-slideout {padding: 0}
+        html .mobmenu-content #mobmenuleft li:hover, 
+        html .mobmenu-content #mobmenuright li:hover, 
+        html .mobmenu-content #mobmenuleft > li > a:hover {background-color: #ff3815;}
 
         html #mobmenuleft li a,
         html #mobmenuleft li a:visited { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; }
+
 
 
 /*Padrao*/
