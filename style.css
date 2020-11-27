@@ -647,9 +647,7 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: auto; text-
 
 }
 
-@media only screen and (max-width : 360px) {
-        
-  #torres-digita-logo { top: 7px; } .content_background {padding: 40px 0px;}
+@media only screen and (max-width : 360px) { #torres-digita-logo { top: 7px; } .content_background {padding: 40px 0px;}
 
 }
 
