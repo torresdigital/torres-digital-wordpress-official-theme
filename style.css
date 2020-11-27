@@ -101,6 +101,13 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
 .torres-digita-logo img {top: 13px;}
 
 
+        .mobmenu-content .current-menu-item a {max-width: 50%;float: none;display: inline-block;text-align: center;position: relative;padding: 0 12px;margin-left: 12px;} 
+        #mobmenuleft {font-weight: 600;} 
+        html .mob-menu-header-holder {background: #fff;}
+        html .mobmenul-container i {color: #333;}
+        html body.mob-menu-slideout {padding: 0}
+
+
 /*Padrao*/
 * {box-sizing: border-box; } body *:focus { outline-offset: none;  outline: none } html body { background-color: #fff; -moz-osx-font-smoothing: antialiased; -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased;} /*image videos*/ .image-video { border: 1px solid #eee; border-radius: 5px; padding: 20px 0; }
 
@@ -642,15 +649,15 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: auto; text-
 
 @media only screen and (max-width : 360px) {
         
-  #torres-digita-logo {
-top: -70px; }
+  #torres-digita-logo { top: 7px; } .content_background {padding: 40px 0px;}
 
 }
 
     @media only screen and (max-width : 320px) {
         
         #torres-digita-logo { top: -61px; } #sudo-su .torres-digital-background-head { background-position-y: 238px;height: 134px; }
-        .torres-digita-logo img { top: 14px; } h1 { font-size: 29px;} .content_background {padding: 40px 0px;} .mobmenu-content .current-menu-item a {max-width: 50%;float: none;display: inline-block;text-align: center;position: relative;padding: 0 12px;margin-left: 12px;} #mobmenuleft {font-weight: 600;} .mob-menu-header-holder {background: transparent;} .mobmenul-container i {color: #333;}
+        .torres-digita-logo img { top: 14px; } h1 { font-size: 29px;} .content_background {padding: 40px 0px;} 
+
 
 }
 
