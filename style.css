@@ -212,11 +212,10 @@ input, textarea { border: 2px solid #f4f4f4; } blockquote p, blockquote a { colo
 
 /*Woocommerce cart*/
 .login_cart_wrap.col-md-3.col-xs-12 {
-  float: none;
   width: auto;
   margin: 20px auto 0;
   position: relative;
-  display: inline-block;
+  display: block;
   float: right;
 }
 /*Logo*/
@@ -530,6 +529,10 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: auto; text-
 
     @media only screen and (max-width : 1024px) {
 
+        .login_cart_wrap.col-md-3.col-xs-12 {top: 43px}
+
+        #torres-digita-logo {top: 48px;}
+
         .container { width: 95%; } .ql_logo_nav.col-md-9.col-xs-12, #ql-navigation {  padding: 0; }
          html .post-template-default .col-md-push-2 {width: auto;margin: 0 5px; padding: 0 15px}
         .sshos-logo-wrapper {left: 0;}
@@ -542,11 +545,11 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: auto; text-
 
     @media only screen and (max-width : 992px) { .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a {margin: 9px 0 0;} /*End*/ }
 
-    @media only screen and (max-width : 979px) {
+    @media only screen and (max-width : 979px) { }
 
-}
-  @media only screen and (max-width : 800px) {
-        /*I got your misfortune, son of a bitch! #QuemaLabs!*/
+    @media only screen and (max-width : 800px) {
+
+        /* #QuemaLabs!*/
       .navbar-collapse.collapse, .collapse  { display: none !important; }
       .collapse.in {  display: block !important; }
 
@@ -568,7 +571,7 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: auto; text-
         #content .products.columns-3 .product { width: auto !important; margin: 0 auto; }
 }
 
-    @media only screen and (max-width : 768px) {
+    @media only screen and (max-width : 768px) {  #torres-digita-logo {top: -14px;}
 
         .content_background { padding: 40px 20px; }
           /*menu header*/
