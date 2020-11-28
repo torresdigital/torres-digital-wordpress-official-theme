@@ -621,7 +621,7 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: auto; text-
 
 }
 
-    @media only screen and (max-width : 320px) {
+    @media only screen and (max-width : 320px) { .login_cart_wrap.col-md-3.col-xs-12 {top: -8px;}
 
         #torres-digita-logo { top: -61px; } #sudo-su .torres-digital-background-head { background-position-y: 238px;height: 134px; }
         .torres-digita-logo img { top: 14px; } h1 { font-size: 29px;} .content_background {padding: 40px 0px;}
