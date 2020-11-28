@@ -617,7 +617,11 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: auto; text-
 
 }
 
-@media only screen and (max-width : 360px) { #torres-digita-logo { top: 7px; } .content_background {padding: 40px 0px;}
+@media only screen and (max-width : 360px) {
+
+    #torres-digita-logo { top: 7px; } .content_background {padding: 40px 0px;}
+    .col-md-6 {width: 100%;position: relative;display: inline-block;padding: 0 15px;}
+    .login_cart_wrap.col-md-3.col-xs-12 {top: -15px;}
 
 }
 
