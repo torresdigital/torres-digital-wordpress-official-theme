@@ -23,18 +23,18 @@
         <link rel="alternate" href="https://site.com.br/conteudo/" hreflang="pt-br" /> (OBS: indicando a versão em português do Brasil)
          <link rel="alternate" href="https://site.com.es/contenido/" hreflang="es" /> (OBS: indicando a versão em espanhol)
          <link rel="alternate" href="https://site.com/content/" hreflang="en" /> (OBS: indicando a versão em inglês).
-            <link rel="alternate" href="https://site.com/content/" hreflang="x-default" /> 
+            <link rel="alternate" href="https://site.com/content/" hreflang="x-default" />
         (OBS: indicando que, caso o usuário não tenha determinado idioma/região, essa é a página que deve ser apresentada)
 
     -->
 
 
 
-    
+
     <style type ="text/css">
-    
-    
-    
+
+
+
     /***************************/
 /*start mobile menu overlay*/
 /***************************/
@@ -42,8 +42,8 @@
 /*************************/
 /*end mobile menu overlay*/
 /*************************/
-    
-    
+
+
     </style>
 
 
@@ -55,16 +55,16 @@
             enable_page_level_ads: true
         });
     </script>
-    
-    
 
-    
-    
-    
-    
 
-    
-    
+
+
+
+
+
+
+
+
 
 
     <!-- Google Tag Manager -->
@@ -86,8 +86,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<meta name="description" content="<?php bloginfo('description'); ?>">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
+
+
     <!-- Magnific Popup core CSS file -->
 <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
 
@@ -109,6 +109,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 
 <body <?php body_class(); ?> >
+
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v9.0&appId=1551462751835247&autoLogAppEvents=1" nonce="eaV1ucdd"></script>
+    <div id="fb-root"></div>
+
+<script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
 
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5F54FW"
@@ -176,8 +182,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <img src="/wp-content/themes/torres-digital-wordpress-official-theme-master/img/logo22019.jpg" alt="Logo" width="138" height="156" />
                             </a>
                         </div>
-                            
-                            
+
+
 
                             <div class="collapse navbar-collapse" id="ql-navigation">
                                 <nav id="jqueryslidemenu" class="jqueryslidemenu navbar" role="navigation">
