@@ -212,11 +212,10 @@ input, textarea { border: 2px solid #f4f4f4; } blockquote p, blockquote a { colo
 
 /*Woocommerce cart*/
 .login_cart_wrap.col-md-3.col-xs-12 {
-  float: none;
   width: auto;
   margin: 20px auto 0;
   position: relative;
-  display: inline-block;
+  display: block;
   float: right;
 }
 /*Logo*/
@@ -529,6 +528,10 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: auto; text-
     }
 
     @media only screen and (max-width : 1024px) {
+
+        .login_cart_wrap.col-md-3.col-xs-12 {top: 43px}
+
+        #torres-digita-logo {top: 48px;}
 
         .container { width: 95%; } .ql_logo_nav.col-md-9.col-xs-12, #ql-navigation {  padding: 0; }
          html .post-template-default .col-md-push-2 {width: auto;margin: 0 5px; padding: 0 15px}
