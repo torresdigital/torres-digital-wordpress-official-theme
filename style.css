@@ -571,7 +571,13 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: auto; text-
         #content .products.columns-3 .product { width: auto !important; margin: 0 auto; }
 }
 
-    @media only screen and (max-width : 768px) {  #torres-digita-logo {top: -14px;}
+    @media only screen and (max-width : 768px) {
+
+
+        .post-image {margin-bottom: 0}
+
+
+        #torres-digita-logo {top: -14px;}
 
         .content_background { padding: 40px 20px; }
           /*menu header*/
@@ -619,7 +625,11 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: auto; text-
 
 @media only screen and (max-width : 360px) {
 
-    #torres-digita-logo { top: 7px; } .content_background {padding: 40px 0px;}
+
+    .col-md-6 h1 {font-size: 24px;}
+    #torres-digita-logo { top: 7px; }
+
+    .content_background {padding: 40px 0px;}
     .col-md-6 {width: 100%;position: relative;display: inline-block;padding: 0 15px;}
     .login_cart_wrap.col-md-3.col-xs-12 {top: -15px;}
 
