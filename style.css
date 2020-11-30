@@ -73,7 +73,9 @@ This theme, like WordPress, is licensed under the GPL. Use it to make something 
         html #mobmenuleft li a,
         html #mobmenuleft li a:visited { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; }
 
-
+.wp-block-video video {
+    width: 560px;
+}
 
 /*Padrao*/
 * {box-sizing: border-box; } body *:focus { outline-offset: none;  outline: none } html body { background-color: #fff; -moz-osx-font-smoothing: antialiased; -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased;} /*image videos*/ .image-video { border: 1px solid #eee; border-radius: 5px; padding: 20px 0; }
@@ -103,7 +105,9 @@ input, textarea { border: 2px solid #f4f4f4; } blockquote p, blockquote a { colo
 
 #commentform #wp-comment-cookies-consent {width: auto; display: inline-flex; margin: 0 12px 0 auto; position: relative}
 
-.pace-done #content, .no-js #content, .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {width: 100%;margin: 0 auto;position: relative; font-size: 14px}
+html .post-template-default #content {width: 75%;} .pace-done #content, .no-js #content, .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {width: 100%;margin: 0 auto;position: relative; font-size: 14px}
+
+
 
  /*Correçao de Layout da Builder*/
 .vc_row.wpb_row.vc_row-fluid {
@@ -520,12 +524,11 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: auto; text-
     .blog article {max-width: 45%;display: inline-grid;margin: 0 10px;padding: 0 5px;}
     .sshos-logo-wrapper {display: inline-block; position: relative; left: 90px;}
 
-    }
-
-    @media only screen and (max-width : 1200px) {
-
+        html .post-template-default #content { width: 73%;}
 
     }
+
+    @media only screen and (max-width : 1200px) {  html .post-template-default #content { width: 67%;} }
 
     @media only screen and (max-width : 1024px) {
 
@@ -539,6 +542,8 @@ html .page-title {letter-spacing: 7px; padding: 0 10px; margin-left: auto; text-
 
         #jqueryslidemenu ul.nav > li > a, .sshos-horizontal-menu-inner a,
         .sshos-dropdown-menu-wrapper li a, .sshos-horizontal-menu-inner li a {margin: 9px 5px 0;}
+
+                html .post-template-default #content { width: 66%;}
 
 
 }
